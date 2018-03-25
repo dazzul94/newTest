@@ -7,11 +7,58 @@
      namespace의 값이 인터페이스 이름과 같아야 한다. -->
 <mapper namespace="java100.app.dao.MemberDao">
 
+<resultMap type="member" id="memberMap">
+        <id column="memberno" property="memberNo"/>
+        <result column="kname" property="kName"/>
+        <result column="ename" property="eName"/>
+        <result column="jname" property="jName"/>
+        <result column="photo" property="photo"/>
+    </resultMap>
+    
 <insert id="insert" parameterType="member"
         useGeneratedKeys="true" keyColumn="no" keyProperty="no">
-        insert into member(kName,photo)
-        values(#{kName},#{photo})
+        insert into member(kname,ename,jname,mynumber1,mynumber2,photo,year,month,day,calendar,gender,wedding,career,moneytype,workingtype,welcome,address,detailaddress,phonenumber1,phonenumber2,phonenumber3,email,stat,alchol)
+        values(#{kName},#{eName},#{jName},#{myNumber1},#{myNumber2},#{photo},#{year},#{month},#{day},#{calendar},#{gender},#{wedding},#{career},#{moneyType},#{workingType},#{welcome},#{address},#{detailAddress},#{phoneNumber1},#{phoneNumber2},#{phoneNumber3},#{email},#{stat},#{alchol})
     </insert>
+    <select id="findAll" resultMap="memberMap" parameterType="map">
+        select 
+            kname,ename,jname,mynumber1,mynumber2,photo,year,month,day,calendar,gender,wedding,career,moneytype,workingtype,welcome,address,detailaddress,phonenumber1,phonenumber2,phonenumber3,email,stat,alchol
+        from member 
+
+        <if test="words != null">
+            <where>
+                <foreach collection="words" item="word">
+                    or title like '%${word}%'
+                </foreach>
+            </where>
+        </if>
+        
+        <!-- 정렬 조건에 따라 SQL문을 변경한다.-->
+        order by 
+        <choose>
+            <when test="orderColumn == 'kname' and align == 'desc'">
+                kname desc
+            </when>
+            <when test="orderColumn == 'kname' and align == 'asc'">
+                kname asc
+            </when>
+            <when test="orderColumn == 'kname' and align == 'desc'">
+                kname desc
+            </when>
+            <when test="orderColumn == 'kname' and align == 'asc'">
+                kname asc
+            </when>
+            <otherwise>
+                kname desc
+            </otherwise>
+        </choose>
+        
+        <!-- 페이지징 처리 -->
+        limit #{startIndex}, #{size}
+    </select>  
+    <select id="countAll" resultType="int">
+        select count(*) from member
+    </select>
 </mapper>  
 
 
