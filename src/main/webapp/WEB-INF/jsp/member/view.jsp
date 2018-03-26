@@ -2,6 +2,7 @@
     contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     trimDirectiveWhitespaces="true"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
 <html>
 <head>
@@ -50,22 +51,22 @@ padding: 50px;
 
 </head>
 <body topmargin="0" leftmargin="0">
-<form action="add" method='post' enctype="multipart/form-data">
+<form action="update" method='post' enctype="multipart/form-data">
 <div id= "wrapper"> 
 <div class="left"> 
 <jsp:include page="../left.jsp"></jsp:include>
 
 </div>
  
+ <c:if test="${not empty member}">
   <div class="main"> 
- 
 <table id="mainFrame" width="640" border="1px solid red" cellspacing="0" cellpadding="0">
   <tr> 
     <td width="640">&nbsp;</td>
   </tr>
   <tr> 
     <td height="25"><img src="${contextPath}/image/icon.gif" width="9" height="9" align="absmiddle"> 
-      <strong>사원 기본 정보 등록</strong></td>
+      <strong>사원 기본 정보 수정</strong></td>
   </tr>
   <tr>
   
@@ -106,7 +107,7 @@ padding: 50px;
                             <tr>
                               <td height="112" bgcolor="#CCCCCC"><table width="100" border="0" cellspacing="1" cellpadding="0">
                                   <tr>
-                                    <td id="holder" height="110" bgcolor="#FFFFFF">&nbsp;</td>
+                                    <td height="110" bgcolor="#FFFFFF"><img src="${contextPath}/download/${member.photo}" width="100%" height="110"></td>
                                   </tr>
                               </table></td>
                             </tr>
@@ -117,24 +118,25 @@ padding: 50px;
                               </tr>
                               
                             <tr>
-                              <td width="107" height="26" align="right"><strong>한글이름 :</strong>&nbsp;</td>
+                              <td width="107" height="26" align="right"><strong>한글이름 :&nbsp;</strong></td>
                               <td width="310" height="26">
-                                <input type="text" name="kName">
+                                <input type="hidden" name="memberNo" value="${member.memberNo}">
+                                <input type="text" name="kName" value="${member.kName}">
                               </td>
                             </tr>
                             <tr>
                               <td height="26" align="right"><strong>영문이름 :&nbsp;</strong></td>
-                              <td height="26"><input type="text" name="eName"></td>
+                              <td height="26"><input type="text" name="eName" value="${member.eName}"></td>
                             </tr>
                             <tr>
                               <td height="26" align="right"><strong>한문이름:</strong>&nbsp;</td>
-                              <td height="26"><input type="text" name="jName"></td>
+                              <td height="26"><input type="text" name="jName" value="${member.jName}"></td>
                             </tr>
                             <tr>
                               <td height="26" align="right"><strong>주민등록번호 :</strong>&nbsp;</td>
-                              <td height="26"><input name="myNumber1" type="text" size="15">
+                              <td height="26"><input name="myNumber1" type="text" size="15" value="${member.myNumber1}">
       -
-        <input name="myNumber2" type="text" size="15"></td>
+        <input name="myNumber2" type="text" size="15" value="${member.myNumber2}"></td>
                             </tr>
                           </table></td>
                         </tr>
@@ -155,7 +157,7 @@ padding: 50px;
                       <td bgcolor="#E4EBF1"><table width="526" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
                             <td width="102" align="right"><strong>사진파일명 :&nbsp;</strong></td>
-                            <td width="268"><input id="upload" name="file" type="file" size="40"></td>
+                            <td width="268"><input name="file" type="file" size="40"></td>
                             <td width="146"><font color="#FF0000"><img src="${contextPath}/image/bt_search.gif" width="49" height="18"></font></td>
                           </tr>
                         </table></td>
@@ -164,11 +166,11 @@ padding: 50px;
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
                             <td width="102" align="right"><strong>생년월일 :&nbsp;</strong></td>
-                            <td width="391"><input name="year" type="text" size="10">
+                            <td width="391"><input name="year" type="text" size="10" value="${member.year}">
                               년 
-                              <input name="month" type="text" size="7">
+                              <input name="month" type="text" size="7" value="${member.month}">
                               월 
-                              <input name="day" type="text" size="7">
+                              <input name="day" type="text" size="7" value="${member.day}">
                               일 ( 
                               <input type="radio" name="calendar" value="양력">
                               양력 
@@ -181,7 +183,7 @@ padding: 50px;
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
                             <td width="102" align="right"><strong>성별 :&nbsp; </strong></td>
-                            <td width="391"> <input type="radio" name="gender" value="남자">
+                            <td width="391"> <input type="radio" name="gender" value="남자" checked="checked">
                               남자 
                               <input type="radio" name="gender" value="여자">
                               여자</td>
@@ -203,7 +205,7 @@ padding: 50px;
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
                             <td width="101" align="right"><strong>년차 :&nbsp;</strong></td>
-                            <td width="392"><input name="career" type="text" size="10"> 
+                            <td width="392"><input name="career" type="text" size="10" value="${member.career}"> 
                             </td>
                           </tr>
                         </table></td>
@@ -246,8 +248,8 @@ padding: 50px;
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
                             <td width="101" align="right"><strong>주소:&nbsp;</strong></td>
-                            <td width="392"><input name="address" type="text" size="10"> 
-                              <input name="detailAddress" type="text" size="40"> 
+                            <td width="392"><input name="address" type="text" size="10" value="${member.address}"> 
+                              <input name="detailAddress" type="text" size="40" value="${member.detailAddress}"> 
                             </td>
                           </tr>
                         </table></td>
@@ -256,11 +258,11 @@ padding: 50px;
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
                             <td width="101" align="right"><strong>연락처:&nbsp;</strong></td>
-                            <td width="392"><input name="phoneNumber1" type="text" size="10">
+                            <td width="392"><input name="phoneNumber1" type="text" size="10" value="${member.phoneNumber1}">
                               - 
-                              <input name="phoneNumber2" type="text" size="10">
+                              <input name="phoneNumber2" type="text" size="10" value="${member.phoneNumber2}">
                               - 
-                              <input name="phoneNumber3" type="text" size="10"></td>
+                              <input name="phoneNumber3" type="text" size="10" value="${member.phoneNumber3}"></td>
                           </tr>
                         </table></td>
                     </tr>
@@ -268,7 +270,7 @@ padding: 50px;
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
                             <td width="101" align="right"><strong>이메일:&nbsp;</strong></td>
-                            <td width="392"><input name="email" type="text" size="20"> 
+                            <td width="392"><input name="email" type="text" size="20" value="${member.email}"> 
                             </td>
                           </tr>
                         </table></td>
@@ -277,7 +279,7 @@ padding: 50px;
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
                             <td width="101" align="right"><strong>기술등급:&nbsp;</strong></td>
-                            <td width="392"><input name="stat" type="text" size="20"> 
+                            <td width="392"><input name="stat" type="text" size="20" value="${member.stat}"> 
                             </td>
                           </tr>
                         </table></td>
@@ -286,7 +288,7 @@ padding: 50px;
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
                             <td width="101" align="right"><strong>주량:&nbsp;</strong></td>
-                            <td width="392"><input name="alchol" type="text" size="20"> 
+                            <td width="392"><input name="alchol" type="text" size="20" value="${member.alchol}"> 
                             </td>
                           </tr>
                         </table></td>
@@ -302,11 +304,9 @@ padding: 50px;
           <td height="3" align="center"><table width="107" border="0" cellpadding="1" cellspacing="1">
             <tr>
               <td width="49">
-                <button>등록</button>
-         
-              <%-- <img src="${contextPath}/image/bt_remove.gif" width="49" height="18"> --%>
+              <button>수정</button>
               </td>
-              <%-- <td width="51"><img src="${contextPath}/image/bt_cancel.gif" width="49" height="18"></td> --%>
+              <td width="51"><img src="${contextPath}/image/bt_cancel.gif" width="49" height="18"></td>
             </tr>
           </table>            </td>
         </tr>
@@ -317,29 +317,9 @@ padding: 50px;
   </tr>
    </table>
   </div>
+  </c:if>
   </div>
        </form>
-      <!--  <script>
-var upload = document.getElementsById('upload')[0],
-    holder = document.getElementById('holder'),
-
-  var file = upload.file,
-      reader = new FileReader();
-  reader.onload = function (event) {
-    var img = new Image();
-    img.src = event.target.result;
-    // note: no onload required since we've got the dataurl...I think! :)
-    if (img.height > 110) { // holder width
-      img.height = 110;
-    }
-    holder.innerHTML = '';
-    holder.appendChild(img);
-  };
-  reader.readAsDataURL(file);
-
-  return false;
-};
-</script> -->
 </body>
 </html>
 

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -85,19 +86,20 @@ public class MemberController {
         model.addAttribute("list", memberService.list(pageNo, pageSize, options));
         return "member/list";
     }
-   /* 
+    
     @RequestMapping("{no}")
     public String view(@PathVariable int no, Model model) throws Exception {
         
         model.addAttribute("member", memberService.get(no));
         return "member/view";
     }
-    */
-  /* 
+    
+   
     @RequestMapping("update")
     public String update(Member member) throws Exception {
-        
+        System.out.println(member.getkName());
         memberService.update(member);
+        System.out.println("업데이트합니당");
         return "redirect:list";
     }
 
@@ -106,7 +108,7 @@ public class MemberController {
 
         memberService.delete(no);
         return "redirect:list";
-    }*/
+    }
     
     long prevMillis = 0;
     int count = 0;

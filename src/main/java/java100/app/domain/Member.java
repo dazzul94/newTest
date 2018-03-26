@@ -1,6 +1,7 @@
 package java100.app.domain;
 
 public class Member {
+    //기본정보
     int memberNo;
     String kName;
     String eName;
@@ -11,9 +12,9 @@ public class Member {
     String year;
     String month;
     String day;
-    int calendar; //양력(1), 음력(2) 선택
-    int gender; //남(1),여(2)
-    int wedding; //기혼(1), 미혼(2)
+    String calendar; //양력(1), 음력(2) 선택
+    String gender; //남(1),여(2)
+    String wedding; //기혼(1), 미혼(2)
     String career; //년차
     String moneyType; //급여 지급유형
     String workingType; //희망직무
@@ -28,6 +29,9 @@ public class Member {
     String alchol;
     public int getMemberNo() {
         return memberNo;
+    }
+    public void setMemberNo(int memberNo) {
+        this.memberNo = memberNo;
     }
     public String getkName() {
         return kName;
@@ -83,22 +87,22 @@ public class Member {
     public void setDay(String day) {
         this.day = day;
     }
-    public int getCalendar() {
+    public String getCalendar() {
         return calendar;
     }
-    public void setCalendar(int calendar) {
+    public void setCalendar(String calendar) {
         this.calendar = calendar;
     }
-    public int getGender() {
+    public String getGender() {
         return gender;
     }
-    public void setGender(int gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
-    public int getWedding() {
+    public String getWedding() {
         return wedding;
     }
-    public void setWedding(int wedding) {
+    public void setWedding(String wedding) {
         this.wedding = wedding;
     }
     public String getCareer() {
@@ -173,9 +177,19 @@ public class Member {
     public void setAlchol(String alchol) {
         this.alchol = alchol;
     }
-    public void setMemberNo(int memberNo) {
-        this.memberNo = memberNo;
+    @Override
+    public String toString() {
+        return "Member [memberNo=" + memberNo + ", kName=" + kName + ", eName=" + eName + ", jName=" + jName
+                + ", myNumber1=" + myNumber1 + ", myNumber2=" + myNumber2 + ", photo=" + photo + ", year=" + year
+                + ", month=" + month + ", day=" + day + ", calendar=" + calendar + ", gender=" + gender + ", wedding="
+                + wedding + ", career=" + career + ", moneyType=" + moneyType + ", workingType=" + workingType
+                + ", welcome=" + welcome + ", address=" + address + ", detailAddress=" + detailAddress
+                + ", phoneNumber1=" + phoneNumber1 + ", phoneNumber2=" + phoneNumber2 + ", phoneNumber3=" + phoneNumber3
+                + ", email=" + email + ", stat=" + stat + ", alchol=" + alchol + "]";
     }
+    
+  
+    
    
     
 }

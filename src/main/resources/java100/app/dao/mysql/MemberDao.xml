@@ -3,62 +3,121 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!-- DAO 객체를 자동으로 생성하려면,
-     namespace의 값이 인터페이스 이름과 같아야 한다. -->
+<!-- DAO 객체를 자동으로 생성하려면, namespace의 값이 인터페이스 이름과 같아야 한다. -->
 <mapper namespace="java100.app.dao.MemberDao">
 
-<resultMap type="member" id="memberMap">
-        <id column="memberno" property="memberNo"/>
-        <result column="kname" property="kName"/>
-        <result column="ename" property="eName"/>
-        <result column="jname" property="jName"/>
-        <result column="photo" property="photo"/>
-    </resultMap>
-    
-<insert id="insert" parameterType="member"
-        useGeneratedKeys="true" keyColumn="no" keyProperty="no">
-        insert into member(kname,ename,jname,mynumber1,mynumber2,photo,year,month,day,calendar,gender,wedding,career,moneytype,workingtype,welcome,address,detailaddress,phonenumber1,phonenumber2,phonenumber3,email,stat,alchol)
-        values(#{kName},#{eName},#{jName},#{myNumber1},#{myNumber2},#{photo},#{year},#{month},#{day},#{calendar},#{gender},#{wedding},#{career},#{moneyType},#{workingType},#{welcome},#{address},#{detailAddress},#{phoneNumber1},#{phoneNumber2},#{phoneNumber3},#{email},#{stat},#{alchol})
-    </insert>
-    <select id="findAll" resultMap="memberMap" parameterType="map">
-        select 
-            kname,ename,jname,mynumber1,mynumber2,photo,year,month,day,calendar,gender,wedding,career,moneytype,workingtype,welcome,address,detailaddress,phonenumber1,phonenumber2,phonenumber3,email,stat,alchol
-        from member 
+	<resultMap type="member" id="memberMap">
+      <id column="memberno" property="memberNo" />
+      <result column="kname" property="kName" />
+      <result column="ename" property="eName" />
+      <result column="jname" property="jName" />
+      <result column="mynumber1" property="myNumber1" />
+      <result column="mynumber2" property="myNumber2" />
+      <result column="photo" property="photo" />
+      <result column="year" property="year" />
+      <result column="month" property="month" />
+      <result column="day" property="day" />
+      <result column="calendar" property="calendar" />
+      <result column="gender" property="gender" />
+      <result column="wedding" property="wedding" />
+      <result column="career" property="career" />
+      <result column="moneytype" property="moneyType" />
+      <result column="workingtype" property="workingType" />
+      <result column="welcome" property="welcome" />
+      <result column="address" property="address" />
+      <result column="detailaddress" property="detailAddress" />
+      <result column="phonenumber1" property="phoneNumber1" />
+      <result column="phonenumber2" property="phoneNumber2" />
+      <result column="phonenumber3" property="phoneNumber3" />
+      <result column="email" property="email" />
+      <result column="stat" property="stat" />
+      <result column="alchol" property="alchol" />
+   </resultMap>
 
-        <if test="words != null">
-            <where>
-                <foreach collection="words" item="word">
-                    or title like '%${word}%'
-                </foreach>
-            </where>
-        </if>
-        
-        <!-- 정렬 조건에 따라 SQL문을 변경한다.-->
-        order by 
-        <choose>
-            <when test="orderColumn == 'kname' and align == 'desc'">
-                kname desc
-            </when>
-            <when test="orderColumn == 'kname' and align == 'asc'">
-                kname asc
-            </when>
-            <when test="orderColumn == 'kname' and align == 'desc'">
-                kname desc
-            </when>
-            <when test="orderColumn == 'kname' and align == 'asc'">
-                kname asc
-            </when>
-            <otherwise>
-                kname desc
-            </otherwise>
-        </choose>
-        
-        <!-- 페이지징 처리 -->
-        limit #{startIndex}, #{size}
-    </select>  
-    <select id="countAll" resultType="int">
-        select count(*) from member
-    </select>
+	<insert id="insert" parameterType="member"
+		useGeneratedKeys="true" keyColumn="memberno" keyProperty="memberNo">
+		insert into
+		member(kname,ename,jname,mynumber1,mynumber2,photo,year,month,day,calendar,gender,wedding,career,moneytype,workingtype,welcome,address,detailaddress,phonenumber1,phonenumber2,phonenumber3,email,stat,alchol)
+		values(#{kName},#{eName},#{jName},#{myNumber1},#{myNumber2},#{photo},#{year},#{month},#{day},#{calendar},#{gender},#{wedding},#{career},#{moneyType},#{workingType},#{welcome},#{address},#{detailAddress},#{phoneNumber1},#{phoneNumber2},#{phoneNumber3},#{email},#{stat},#{alchol})
+	</insert>
+	<select id="findAll" resultMap="memberMap" parameterType="map">
+		select
+		*
+		from member
+
+		<if test="words != null">
+			<where>
+				<foreach collection="words" item="word">
+					or title like '%${word}%'
+				</foreach>
+			</where>
+		</if>
+
+		<!-- 정렬 조건에 따라 SQL문을 변경한다. -->
+		order by
+		<choose>
+			<when test="orderColumn == 'kname' and align == 'desc'">
+				kname desc
+			</when>
+			<when test="orderColumn == 'kname' and align == 'asc'">
+				kname asc
+			</when>
+			<when test="orderColumn == 'kname' and align == 'desc'">
+				kname desc
+			</when>
+			<when test="orderColumn == 'kname' and align == 'asc'">
+				kname asc
+			</when>
+			<otherwise>
+				kname desc
+			</otherwise>
+		</choose>
+
+		<!-- 페이지징 처리 -->
+		limit #{startIndex}, #{size}
+	</select>
+	<select id="countAll" resultType="int">
+		select count(*) from member
+	</select>
+	<select id="findByNo" resultMap="memberMap" parameterType="int">
+		select *
+		from member
+		where memberno=#{value}
+	</select>
+
+	<update id="update" parameterType="member">
+	   update member set
+       kname=#{kName},
+       ename=#{eName},
+       jname=#{jName},
+       mynumber1=#{myNumber1},
+       mynumber2=#{myNumber2},
+       photo=#{photo},
+       year=#{year},
+       month=#{month},
+       day=#{day},
+       calendar=#{calendar},
+       gender=#{gender},
+       wedding=#{wedding},
+       career=#{career},
+       moneytype=#{moneyType},
+       workingtype=#{workingType},
+       welcome=#{welcome},
+       address=#{address},
+       detailaddress=#{detailAddress},
+       phonenumber1=#{phoneNumber1},
+       phonenumber2=#{phoneNumber2},
+       phonenumber3=#{phoneNumber3},
+       email=#{email},
+       stat=#{stat},
+       alchol=#{alchol}
+	   where memberno=#{memberNo}
+	</update>
+
+	<delete id="delete" parameterType="int">
+		delete from member
+		where memberno=#{value}
+	</delete>
 </mapper>  
 
 

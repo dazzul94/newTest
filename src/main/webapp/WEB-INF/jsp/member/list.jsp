@@ -3,12 +3,58 @@
     pageEncoding="UTF-8"
     trimDirectiveWhitespaces="true"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">  
 <html>
 <head>
+<style type="text/css">
+/* .left {
+    position: absolute;
+    top: 100px;
+    left: 80px;
+}
+
+.main {
+float:left;
+padding: 50px;
+
+   /* margin: 10auto;
+   text-align: right;
+   padding: 0px;
+ */ */
+ 
+ #wrapper{
+ border:1px solid #RRBBOO;
+ width:1054px;
+ padding:10px;
+ position:absolute;
+ top:10px;
+ left:50%;
+ margin-left:-533px;
+ overflow:hidden;
+ }
+ .main{
+ border:1px solid red;
+ width:800px;
+ float:left;
+ padding:10px;
+ }
+ .left{
+ border:1px solid blue;
+ width:200px;
+ float:left;
+ padding:10px;
+ margin-left:10px;
+ }
+}
+</style>
 <link href="${contextPath}/css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body topmargin="0" leftmargin="0">
+<div id= "wrapper"> 
+<div class="left"> 
+<jsp:include page="../left.jsp"></jsp:include>
+</div>
+  <div class="main">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr> 
     <td>&nbsp;</td>
@@ -54,8 +100,9 @@
                     </tr>
                 <c:forEach items="${list}" var="member">
                     <tr> 
-                      <td width="35" height="20" align="center"><input type="checkbox" name="checkbox" value="checkbox"></td>
-                      <td width="85" align="center">${member.kName}</td>
+                      <td width="35" height="20" align="center"><input type="checkbox" name="no" value="${member.memberNo}"></td>
+                      <td width="85" align="center"><a href="${member.memberNo}"><span class="d-inline-block text-truncate" 
+            style="max-width: 300px;">${member.kName}</span></a></td>
                       <td width="153" align="center">${member.myNumber1}-${member.myNumber2}</td>
                       <td width="91" align="center">${member.gender}</td>
                       <td width="91" align="center">${member.stat}</td>
@@ -88,8 +135,8 @@
         <tr> 
           <td height="3" background="image/bar_bg1.gif"></td>
         </tr>
-      </table></td>
-  </tr>
-</table>
+      </table>
+    </div>
+  </div>
 </body>
 </html>

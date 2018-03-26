@@ -13,16 +13,16 @@
           <td height="9"><img src="${contextPath}/image/left_top.gif" width="170" height="9"></td>
         </tr>
         <tr> 
-          <td align="center" valign="top" background="image/left_bg.gif">
+          <td align="center" valign="top" background="${contextPath}/image/left_bg.gif">
           <!----------------------  메뉴들 ----------------------------->
           <table width="150" border="0" cellspacing="0" cellpadding="0">
               <tr> 
                 <td width="17" height="20"><img src="${contextPath}/image/left_icon.gif" width="11" height="11" align="absmiddle"></td>
-                <td width="133"><a href="#">기본정보</a></td>
+                <td width="133"><a href="list">인사정보</a></td>
               </tr>
               <tr> 
                 <td height="20">&nbsp;</td>
-                <td>- 등록</td>
+                <td><a href="add">-등록</a></td>
               </tr>
               <tr> 
                 <td height="20"><img src="${contextPath}/image/left_icon.gif" width="11" height="11" align="absmiddle"></td>
@@ -59,7 +59,7 @@
   <tr> 
     <td align="center"><table width="170" height="49" border="0" cellpadding="0" cellspacing="0">
         <tr> 
-          <td align="center" background="image/left_box.gif">
+          <td align="center" background="${contextPath}/image/left_box.gif">
           <!------------------------------ 경력검색 ---------------------------------->
           <table width="155" border="0" cellspacing="0" cellpadding="0">
               <tr> 
