@@ -304,6 +304,7 @@ padding: 50px;
           <td height="3" align="center"><table width="107" border="0" cellpadding="1" cellspacing="1">
             <tr>
               <td width="49">
+              <input name="originalFilename" type="hidden" value="${member.photo}" size="40">
               <button>수정</button>
               </td>
               <td width="51"><img src="${contextPath}/image/bt_cancel.gif" width="49" height="18"></td>

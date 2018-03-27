@@ -8,7 +8,8 @@ public class Member {
     String jName;
     String myNumber1; //주민번호
     String myNumber2; //주민번호
-    String photo;  
+    String photo; 
+    String originalFilename;
     String year;
     String month;
     String day;
@@ -68,6 +69,12 @@ public class Member {
     }
     public void setPhoto(String photo) {
         this.photo = photo;
+    }
+    public String getOriginalFilename() {
+        return originalFilename;
+    }
+    public void setOriginalFilename(String originalFilename) {
+        this.originalFilename = originalFilename;
     }
     public String getYear() {
         return year;
@@ -180,16 +187,14 @@ public class Member {
     @Override
     public String toString() {
         return "Member [memberNo=" + memberNo + ", kName=" + kName + ", eName=" + eName + ", jName=" + jName
-                + ", myNumber1=" + myNumber1 + ", myNumber2=" + myNumber2 + ", photo=" + photo + ", year=" + year
-                + ", month=" + month + ", day=" + day + ", calendar=" + calendar + ", gender=" + gender + ", wedding="
-                + wedding + ", career=" + career + ", moneyType=" + moneyType + ", workingType=" + workingType
-                + ", welcome=" + welcome + ", address=" + address + ", detailAddress=" + detailAddress
-                + ", phoneNumber1=" + phoneNumber1 + ", phoneNumber2=" + phoneNumber2 + ", phoneNumber3=" + phoneNumber3
-                + ", email=" + email + ", stat=" + stat + ", alchol=" + alchol + "]";
+                + ", myNumber1=" + myNumber1 + ", myNumber2=" + myNumber2 + ", photo=" + photo + ", originalFilename="
+                + originalFilename + ", year=" + year + ", month=" + month + ", day=" + day + ", calendar=" + calendar
+                + ", gender=" + gender + ", wedding=" + wedding + ", career=" + career + ", moneyType=" + moneyType
+                + ", workingType=" + workingType + ", welcome=" + welcome + ", address=" + address + ", detailAddress="
+                + detailAddress + ", phoneNumber1=" + phoneNumber1 + ", phoneNumber2=" + phoneNumber2
+                + ", phoneNumber3=" + phoneNumber3 + ", email=" + email + ", stat=" + stat + ", alchol=" + alchol + "]";
     }
-    
-  
-    
    
+    
     
 }

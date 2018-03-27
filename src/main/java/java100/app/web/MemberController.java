@@ -22,15 +22,18 @@ import java100.app.service.MemberService;
 @Controller
 @RequestMapping("/member")
 public class MemberController {
-    
-    @Autowired ServletContext servletContext;
-    @Autowired MemberService memberService;
-    
-    @RequestMapping(value="add", method=RequestMethod.GET)
+
+    @Autowired
+    ServletContext servletContext;
+    @Autowired
+    MemberService memberService;
+
+    @RequestMapping(value = "add", method = RequestMethod.GET)
     public String form() {
         return "member/form";
     }
-    @RequestMapping(value="add", method=RequestMethod.POST)
+
+    @RequestMapping(value = "add", method = RequestMethod.POST)
     public String add(Member member, MultipartFile file, BindingResult bindingResult) throws Exception {
         // 업로드 파일을 저장할 폴더 위치를 가져온다.
         if (bindingResult.hasErrors()) {
@@ -39,67 +42,76 @@ public class MemberController {
             System.out.println("파라미터 값을 변환하는 중에 오류 발생!");
         }
         String uploadDir = servletContext.getRealPath("/download");
-        
+
         String filename = writeUploadFile(file, uploadDir);
         member.setPhoto(filename);
-        
+
         memberService.add(member);
-        
+
         return "redirect:list";
     }
+
     @RequestMapping("list")
-    public String list(
-            @RequestParam(value="pn", defaultValue="1") int pageNo,
-            @RequestParam(value="ps", defaultValue="10") int pageSize,
-            @RequestParam(value="words", required=false) String[] words,
-            @RequestParam(value="oc", required=false) String orderColumn,
-            @RequestParam(value="al", required=false) String align,
-            Model model) throws Exception {
-        
+    public String list(@RequestParam(value = "pn", defaultValue = "1") int pageNo,
+            @RequestParam(value = "ps", defaultValue = "10") int pageSize,
+            @RequestParam(value = "words", required = false) String[] words,
+            @RequestParam(value = "oc", required = false) String orderColumn,
+            @RequestParam(value = "al", required = false) String align, Model model) throws Exception {
+
         // UI 제어와 관련된 코드는 이렇게 페이지 컨트롤러에 두어야 한다.
         //
         if (pageNo < 1) {
             pageNo = 1;
         }
-        
+
         if (pageSize < 10 || pageSize > 20) {
             pageSize = 10;
         }
-        
-        HashMap<String,Object> options = new HashMap<>();
+
+        HashMap<String, Object> options = new HashMap<>();
         if (words != null && words[0].length() > 0) {
             options.put("words", words);
         }
         options.put("orderColumn", orderColumn);
         options.put("align", align);
-        
+
         int totalCount = memberService.getTotalCount();
         int lastPageNo = totalCount / pageSize;
         if ((totalCount % pageSize) > 0) {
             lastPageNo++;
         }
-        
+
         // view 컴포넌트가 사용할 값을 Model에 담는다.
         model.addAttribute("pageNo", pageNo);
         model.addAttribute("lastPageNo", lastPageNo);
-        
+
         model.addAttribute("list", memberService.list(pageNo, pageSize, options));
         return "member/list";
     }
-    
+
     @RequestMapping("{no}")
     public String view(@PathVariable int no, Model model) throws Exception {
-        
+
         model.addAttribute("member", memberService.get(no));
         return "member/view";
     }
-    
-   
+
     @RequestMapping("update")
-    public String update(Member member) throws Exception {
-        System.out.println(member.getkName());
+    public String update(Member member, MultipartFile file, BindingResult bindingResult) throws Exception {
+        if (bindingResult.hasErrors()) {
+            System.out.println("파라미터 값을 변환하는 중에 오류 발생!");
+        }
+        System.out.println(file.getOriginalFilename());
+        if (file.getOriginalFilename().equals("")) {
+            System.out.println("사진 등록 X");
+            member.setPhoto(member.getOriginalFilename());
+        } else {
+            System.out.println("사진 등록 O");
+            String uploadDir = servletContext.getRealPath("/download");
+            String filename = writeUploadFile(file, uploadDir);
+            member.setPhoto(filename);
+        }
         memberService.update(member);
-        System.out.println("업데이트합니당");
         return "redirect:list";
     }
 
@@ -109,11 +121,11 @@ public class MemberController {
         memberService.delete(no);
         return "redirect:list";
     }
-    
+
     long prevMillis = 0;
     int count = 0;
-    
-    // 다른 클라이언트가 보낸 파일명과 중복되지 않도록 
+
+    // 다른 클라이언트가 보낸 파일명과 중복되지 않도록
     // 서버에 파일을 저장할 때는 새 파일명을 만든다.
     synchronized private String getNewFilename(String filename) {
         long currMillis = System.currentTimeMillis();
@@ -121,34 +133,24 @@ public class MemberController {
             count = 0;
             prevMillis = currMillis;
         }
-        
-        return  currMillis + "_" + count++ + extractFileExtName(filename); 
+
+        return currMillis + "_" + count++ + extractFileExtName(filename);
     }
-    
+
     // 파일명에서 뒤의 확장자명을 추출한다.
     private String extractFileExtName(String filename) {
         int dotPosition = filename.lastIndexOf(".");
-        
+
         if (dotPosition == -1)
             return "";
-        
+
         return filename.substring(dotPosition);
     }
-    
+
     private String writeUploadFile(MultipartFile part, String path) throws IOException {
-        
+
         String filename = getNewFilename(part.getOriginalFilename());
         part.transferTo(new File(path + "/" + filename));
         return filename;
-    }  
+    }
 }
-
-
-
-
-
-
-
-
-
-
