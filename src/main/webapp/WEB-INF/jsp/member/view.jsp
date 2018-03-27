@@ -136,7 +136,7 @@ padding: 50px;
                               <td height="26" align="right"><strong>주민등록번호 :</strong>&nbsp;</td>
                               <td height="26"><input name="myNumber1" type="text" size="15" value="${member.myNumber1}">
       -
-        <input name="myNumber2" type="text" size="15" value="${member.myNumber2}"></td>
+                            <input name="myNumber2" type="text" size="15" value="${member.myNumber2}"></td>
                             </tr>
                           </table></td>
                         </tr>
