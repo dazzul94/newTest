@@ -4,7 +4,7 @@
     trimDirectiveWhitespaces="true"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">  
-<html>
+<html> 
 <head>
 <style type="text/css">
 /* .left {
@@ -51,8 +51,7 @@ padding: 50px;
 </head>
 <body topmargin="0" leftmargin="0">
 <div id= "wrapper"> 
-<div class="left"> 
-<jsp:include page="../left.jsp"></jsp:include>
+<div class="left"> <jsp:include page="../left.jsp"></jsp:include>
 </div>
   <div class="main">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -133,7 +132,7 @@ padding: 50px;
             </table></td>
         </tr>
         <tr> 
-          <td height="3" background="image/bar_bg1.gif"></td>
+          <td height="3" background="${contextPath}/image/bar_bg1.gif"></td>
         </tr>
       </table>
     </div>
