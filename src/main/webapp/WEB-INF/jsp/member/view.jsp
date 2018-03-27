@@ -307,6 +307,7 @@ padding: 50px;
               <button>수정</button>
               </td>
               <td width="51"><img src="${contextPath}/image/bt_cancel.gif" width="49" height="18"></td>
+              <td><a href='delete?no=${member.memberNo}' class='btn btn-primary btn-sm'>삭제</a></td>
             </tr>
           </table>            </td>
         </tr>
