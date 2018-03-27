@@ -113,8 +113,8 @@ padding: 50px;
                       <td colspan="7" background="${contextPath}/image/line_bg.gif"></td>
                     </tr>
                     </c:forEach>
-                      <td height="35" colspan="7" align="center" style="padding-bottom:3"><a href="#"><img src="${contextPath}/image/prev.gif" width="22" height="15" border="0" align="absmiddle"></a>&nbsp;<a href="#"><img src="${contextPath}/image/pre.gif" width="42" height="15" border="0" align="absmiddle"></a>&nbsp; 
-                        1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 &nbsp;<a href="#"><img src="${contextPath}/image/next.gif" width="42" height="15" border="0" align="absmiddle"></a>&nbsp;<a href="#"><img src="${contextPath}/image/next_.gif" width="22" height="15" border="0" align="absmiddle"></a></td>
+                      <td height="35" colspan="7" align="center" style="padding-bottom:3"><a href="list?pn=1"><img src="${contextPath}/image/prev.gif" width="22" height="15" border="0" align="absmiddle"></a>&nbsp;<a href="list?pn=${pageNo - 1}"><img src="${contextPath}/image/pre.gif" width="42" height="15" border="0" align="absmiddle"></a>&nbsp; 
+                        <a href="list?pn=1">1</a> | <a href="list?pn=2">2</a> | <a href="list?pn=3">3</a> | <a href="list?pn=4">4</a> | <a href="list?pn=5">5</a> | <a href="list?pn=6">6</a> | <a href="list?pn=7">7</a> | <a href="list?pn=8">8</a> | <a href="list?pn=9">9</a> | <a href="list?pn=10">10</a> &nbsp;<a href="list?pn=${pageNo + 1}"><img src="${contextPath}/image/next.gif" width="42" height="15" border="0" align="absmiddle"></a>&nbsp;<a href="list?pn=${lastPageNo}"><img src="${contextPath}/image/next_.gif" width="22" height="15" border="0" align="absmiddle"></a></td>
                     </tr>
                   </table>
                 <!-------------------------  리스트 ------------------------------>
