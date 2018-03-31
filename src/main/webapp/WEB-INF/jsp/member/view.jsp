@@ -7,6 +7,10 @@
 <html>
 <head>
 <style type="text/css">
+.file_input_textbox {float:left; /* height:29px; */width: 180px;}
+    .file_input_div {position:relative; width:80px; /* height:36px; */ overflow:hidden;}
+    .file_input_img_btn {padding:0 0 0 5px;}
+    .file_input_hidden {font-size:29px; position:absolute; right:0px; top:0px; opacity:0; filter: alpha(opacity=0); -ms-filter: alpha(opacity=0); cursor:pointer;}
 /* .left {
     position: absolute;
     top: 100px;
@@ -157,8 +161,16 @@ padding: 50px;
                       <td bgcolor="#E4EBF1"><table width="526" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
                             <td width="102" align="right"><strong>사진파일명 :&nbsp;</strong></td>
-                            <td width="268"><input name="file" type="file" size="40"></td>
-                            <td width="146"><font color="#FF0000"><img src="${contextPath}/image/bt_search.gif" width="49" height="18"></font></td>
+                            <td width="268">
+                            <div>
+                            <input type="text" id="fileName" value="${member.photo}" class="file_input_textbox" readonly >
+                            <div class="file_input_div">
+                            <img src="${contextPath}/image/bt_search.gif" class="file_input_img_btn" alt="open" />
+                            <input type="file" name="file" class="file_input_hidden" size="40" onchange="javascript: document.getElementById('fileName').value = this.value"/>
+                            </div>
+                            </div>
+                            </td>
+                            <td width="146"><%-- <font color="#FF0000"><img src="${contextPath}/image/bt_search.gif" width="49" height="18"></font> --%></td>
                           </tr>
                         </table></td>
                     </tr>
