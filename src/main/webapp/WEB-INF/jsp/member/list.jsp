@@ -33,13 +33,13 @@ padding: 50px;
  overflow:hidden;
  }
  .main{
- border:1px solid red;
+ border:0px;
  width:800px;
  float:left;
  padding:10px;
  }
  .left{
- border:1px solid blue;
+ border:0px;
  width:200px;
  float:left;
  padding:10px;

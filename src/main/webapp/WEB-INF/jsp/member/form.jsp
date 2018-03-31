@@ -32,13 +32,13 @@ padding: 50px;
  overflow:hidden;
  }
  .main{
- border:1px solid red;
+ border:0px;
  width:800px;
  float:left;
  padding:10px;
  }
  .left{
- border:1px solid blue;
+ border:0px;
  width:200px;
  float:left;
  padding:10px;
@@ -59,7 +59,7 @@ padding: 50px;
  
   <div class="main"> 
  
-<table id="mainFrame" width="640" border="1px solid red" cellspacing="0" cellpadding="0">
+<table id="mainFrame" width="640" border="0px" cellspacing="0" cellpadding="0">
   <tr> 
     <td width="640">&nbsp;</td>
   </tr>
