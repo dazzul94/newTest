@@ -135,7 +135,7 @@ padding: 50px;
                               <td height="26"><input type="text" name="eName"></td>
                             </tr>
                             <tr>
-                              <td height="26" align="right"><strong>한문이름:</strong>&nbsp;</td>
+                              <td height="26" align="right"><strong>한문이름 :</strong>&nbsp;</td>
                               <td height="26"><input type="text" name="jName"></td>
                             </tr>
                             <tr>
@@ -250,7 +250,7 @@ padding: 50px;
                     <tr> 
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
-                            <td width="101" align="right"><strong>입사유형:&nbsp;</strong></td>
+                            <td width="101" align="right"><strong>입사유형 :&nbsp;</strong></td>
                             <td width="392"> <select name="welcome">
                                 <option>정규직</option>
                                 <option>계약직</option>
@@ -261,7 +261,7 @@ padding: 50px;
                     <tr> 
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
-                            <td width="101" align="right"><strong>주소:&nbsp;</strong></td>
+                            <td width="101" align="right"><strong>주소 :&nbsp;</strong></td>
                             <td width="392"><input name="address" type="text" size="10"> 
                               <input name="detailAddress" type="text" size="40"> 
                             </td>
@@ -271,7 +271,7 @@ padding: 50px;
                     <tr> 
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
-                            <td width="101" align="right"><strong>연락처:&nbsp;</strong></td>
+                            <td width="101" align="right"><strong>연락처 :&nbsp;</strong></td>
                             <td width="392"><input name="phoneNumber1" type="text" size="10">
                               - 
                               <input name="phoneNumber2" type="text" size="10">
@@ -283,7 +283,7 @@ padding: 50px;
                     <tr> 
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
-                            <td width="101" align="right"><strong>이메일:&nbsp;</strong></td>
+                            <td width="101" align="right"><strong>이메일 :&nbsp;</strong></td>
                             <td width="392"><input name="email" type="text" size="20"> 
                             </td>
                           </tr>
@@ -292,7 +292,7 @@ padding: 50px;
                     <tr> 
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
-                            <td width="101" align="right"><strong>기술등급:&nbsp;</strong></td>
+                            <td width="101" align="right"><strong>기술등급 :&nbsp;</strong></td>
                             <td width="392"><input name="stat" type="text" size="20"> 
                             </td>
                           </tr>
@@ -301,7 +301,7 @@ padding: 50px;
                     <tr> 
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
-                            <td width="101" align="right"><strong>주량:&nbsp;</strong></td>
+                            <td width="101" align="right"><strong>주량 :&nbsp;</strong></td>
                             <td width="392"><input name="alchol" type="text" size="20"> 
                             </td>
                           </tr>
