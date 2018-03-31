@@ -1,10 +1,12 @@
+@charset "UTF-8";
+
 BODY
 {
     FONT-WEIGHT: lighter;
     FONT-SIZE: 9pt;
     TEXT-TRANSFORM: capitalize;
     COLOR: black;
-    FONT-FAMILY: ±º∏≤;
+    FONT-FAMILY: Íµ¥Î¶º;
     BACKGROUND-COLOR: white;
     FONT-VARIANT: small-caps
 }
@@ -43,27 +45,27 @@ TD.BOR2
 TD.al_01
 {
     FONT-SIZE: 9pt;
-    FONT-FAMILY: µ∏¿Ω;
+    FONT-FAMILY: ÎèãÏùå;
     BACKGROUND-COLOR: #F2F2D8;
     TEXT-ALIGN: center;
-	COLOR: #333333
+    COLOR: #333333
 }
 
 TD.al_02
 {
     FONT-SIZE: 9pt;
-    FONT-FAMILY: µ∏¿Ω;
+    FONT-FAMILY: ÎèãÏùå;
     BACKGROUND-COLOR: #F2F2D8;
     TEXT-ALIGN: left;
-	COLOR: #333333
+    COLOR: #333333
 }
 TD.a2_01
 {
     FONT-SIZE: 9pt;
-    FONT-FAMILY: µ∏¿Ω;
+    FONT-FAMILY: ÎèãÏùå;
     BACKGROUND-COLOR: #ECE3B9;
     TEXT-ALIGN: center;
-	COLOR: #333333
+    COLOR: #333333
 }
 
 IMG
@@ -72,17 +74,17 @@ IMG
 }
 A:link
 {
-	COLOR: #333333;
-	TEXT-DECORATION:none;
-	font-family: "±º∏≤√º";
-	font-size: 9pt;
-	line-height: normal;
+    COLOR: #333333;
+    TEXT-DECORATION:none;
+    font-family: "Íµ¥Î¶ºÏ≤¥";
+    font-size: 9pt;
+    line-height: normal;
     height: auto;
-	width: auto;
-	list-style-type: none;
-	page-break-before: auto;
-	page-break-after: auto;
-	
+    width: auto;
+    list-style-type: none;
+    page-break-before: auto;
+    page-break-after: auto;
+    
 }
 A:visited
 {
@@ -95,8 +97,8 @@ A:active
     TEXT-DECORATION: none
 }
 a:hover {
-	color: #CC9900;
-	text-decoration: none;
+    color: #CC9900;
+    text-decoration: none;
 }
 .blink:link
 {
@@ -126,7 +128,7 @@ UL
 {
     FONT-SIZE: 9pt;
     COLOR: darkblue;
-    FONT-FAMILY: ±º∏≤;
+    FONT-FAMILY: Íµ¥Î¶º;
     LIST-STYLE-TYPE: disc
 }
 SPAN.note
@@ -136,56 +138,56 @@ SPAN.note
 TD
 {
     FONT-SIZE: 9pt;
-    FONT-FAMILY: ±º∏≤;
-	COLOR: #333333
+    FONT-FAMILY: Íµ¥Î¶º;
+    COLOR: #333333
 }
 TH
 {
     FONT-SIZE: 9pt;
-    FONT-FAMILY: ±º∏≤
+    FONT-FAMILY: Íµ¥Î¶º
 }
 
 INPUT
 { 
-	FONT-SIZE: 9pt;
-	FONT-FAMILY: ±º∏≤;
-	border-top-width:1px;
-	border-right-width:1px;
-	border-bottom-width:1px;
-	border-left-width:1px;
-	margin: auto;: 1px solid;
-	background-color:#ffffff
+    FONT-SIZE: 9pt;
+    FONT-FAMILY: Íµ¥Î¶º;
+    border-top-width:1px;
+    border-right-width:1px;
+    border-bottom-width:1px;
+    border-left-width:1px;
+    margin: auto;: 1px solid;
+    background-color:#ffffff
 }
 
 .input_login
 { 
-	FONT-SIZE: 9pt;
-	FONT-FAMILY: ±º∏≤;
-	border-top-width:0px;
-	border-right-width:0px;
-	border-bottom-width:0px;
-	border-left-width:0px;
-	margin: auto;: 1px solid;;
-	background-color:#ffffff
+    FONT-SIZE: 9pt;
+    FONT-FAMILY: Íµ¥Î¶º;
+    border-top-width:0px;
+    border-right-width:0px;
+    border-bottom-width:0px;
+    border-left-width:0px;
+    margin: auto;: 1px solid;;
+    background-color:#ffffff
 }
 
 .INPUT2
 { 
-	FONT-SIZE: 9pt;
-	FONT-FAMILY: ±º∏≤;
-	background-color:#035D86;
-	border-top-width:0px;
-	border-right-width:0px;
-	border-bottom-width:0px;
-	border-left-width:0px;
-	margin: auto;1px solid;;
+    FONT-SIZE: 9pt;
+    FONT-FAMILY: Íµ¥Î¶º;
+    background-color:#035D86;
+    border-top-width:0px;
+    border-right-width:0px;
+    border-bottom-width:0px;
+    border-left-width:0px;
+    margin: auto;1px solid;;
 }
 
 
 combo1
 {
-	border: 1px solid;;
-	WIDTH: 100;
+    border: 1px solid;;
+    WIDTH: 100;
 }
 INPUT.close
 {
@@ -195,49 +197,49 @@ INPUT.close
   BORDER-LEFT: #8f8f8f 1px solid;
   COLOR: #000000;
   BORDER-BOTTOM: #eeeeee 1px solid;
-  FONT-FAMILY:9pt, ±º∏≤, VERDANA, SANS-SERIF, SERIF;
+  FONT-FAMILY:9pt, Íµ¥Î¶º, VERDANA, SANS-SERIF, SERIF;
   HEIGHT: auto: 1px solid;;
   background-color:#eeeded ;
 }
 OL
 {
     FONT-SIZE: 9pt;
-    FONT-FAMILY: "±º∏≤"
+    FONT-FAMILY: "Íµ¥Î¶º"
 }
 .logo
 {
     FONT-SIZE: 9pt;
-    FONT-FAMILY: ±º∏≤
+    FONT-FAMILY: Íµ¥Î¶º
 }
 .logo1
 {
     FONT-SIZE: 9pt;
     COLOR: #333333;
-    FONT-FAMILY: ±º∏≤
+    FONT-FAMILY: Íµ¥Î¶º
 }
 .logo2
 {
     FONT-SIZE: 9pt;
     COLOR: black;
-    FONT-FAMILY: ±º∏≤
+    FONT-FAMILY: Íµ¥Î¶º
 }
 .logo3
 {
     FONT-SIZE: 9pt;
     COLOR: #333333;
-    FONT-FAMILY: ±º∏≤
+    FONT-FAMILY: Íµ¥Î¶º
 }
 .logo4
 {
     FONT-SIZE: 10pt;
     COLOR: #333333;
-    FONT-FAMILY: ±º∏≤
+    FONT-FAMILY: Íµ¥Î¶º
 }
 .white
 {
     FONT-SIZE: 9pt;
     COLOR: #333333;
-    FONT-FAMILY: ±º∏≤;
+    FONT-FAMILY: Íµ¥Î¶º;
     BACKGROUND-COLOR: #ffffff
 }
 .FooterTag
@@ -257,7 +259,7 @@ OL
     BORDER-LEFT: 1px solid;
     COLOR: black;
     BORDER-BOTTOM: 1px solid;
-    FONT-FAMILY: ±º∏≤;
+    FONT-FAMILY: Íµ¥Î¶º;
     TEXT-ALIGN: left;
     TEXT-DECORATION: none
 }
@@ -273,7 +275,7 @@ OL
     BORDER-LEFT: 1pt solid;
     COLOR: black;
     BORDER-BOTTOM: 1pt solid;
-    FONT-FAMILY: ±º∏≤;
+    FONT-FAMILY: Íµ¥Î¶º;
     TEXT-ALIGN: right;
     TEXT-DECORATION: none
 }
@@ -285,7 +287,7 @@ OL
     BORDER-LEFT: 0px solid;
     COLOR: black;
     BORDER-BOTTOM: 0px solid;
-    FONT-FAMILY: ±º∏≤;
+    FONT-FAMILY: Íµ¥Î¶º;
     BACKGROUND-COLOR: #eeeded;
     TEXT-ALIGN: left;
     TEXT-DECORATION: none
@@ -298,7 +300,7 @@ OL
     BORDER-LEFT: 0pt solid;
     COLOR: black;
     BORDER-BOTTOM: 0pt solid;
-    FONT-FAMILY: ±º∏≤;
+    FONT-FAMILY: Íµ¥Î¶º;
     BACKGROUND-COLOR: #eeeded;
     TEXT-ALIGN: right;
     TEXT-DECORATION: none
@@ -307,7 +309,7 @@ OL
 {
     FONT-SIZE: 9pt;
     LINE-HEIGHT: 130%;
-    FONT-FAMILY: ±º∏≤
+    FONT-FAMILY: Íµ¥Î¶º
 }
 text
 {
@@ -318,7 +320,7 @@ text
     BORDER-LEFT: 1px solid;
     COLOR: #333333;
     BORDER-BOTTOM: 1px solid;
-    FONT-FAMILY: ±º∏≤;
+    FONT-FAMILY: Íµ¥Î¶º;
     TEXT-ALIGN: right;
     TEXT-DECORATION: none
 }
@@ -326,7 +328,7 @@ text
 {
     FONT-SIZE: 9pt;
     COLOR: #181818;
-    FONT-FAMILY: ±º∏≤;
+    FONT-FAMILY: Íµ¥Î¶º;
     HEIGHT: 20px;
     BACKGROUND-COLOR: #f7f7f7;
     align: center
@@ -335,7 +337,7 @@ text
 {
     FONT-SIZE: 9pt;
     COLOR: #181818;
-    FONT-FAMILY: ±º∏≤;
+    FONT-FAMILY: Íµ¥Î¶º;
     HEIGHT: 20px;
     BACKGROUND-COLOR: #eaf4e6;
     align: center
@@ -344,7 +346,7 @@ text
 {
     FONT-SIZE: 9pt;
     COLOR: #181818;
-    FONT-FAMILY: ±º∏≤;
+    FONT-FAMILY: Íµ¥Î¶º;
     HEIGHT: 20px;
     BACKGROUND-COLOR: #eeeeee;
     align: center
@@ -353,7 +355,7 @@ text
 {
     FONT-SIZE: 9pt;
     COLOR: #181818;
-    FONT-FAMILY: ±º∏≤;
+    FONT-FAMILY: Íµ¥Î¶º;
     HEIGHT: 20px;
     BACKGROUND-COLOR: #ffffff;
     align: center
@@ -377,13 +379,13 @@ TR.COLOR
     FONT-WEIGHT: bold;
     FONT-SIZE: 10pt;
     COLOR: #555555;
-    FONT-FAMILY: ±º∏≤
+    FONT-FAMILY: Íµ¥Î¶º
 }
 .pt9_J
 {
     FONT-SIZE: 12px;
     COLOR: black;
-    FONT-FAMILY: ±º∏≤;
+    FONT-FAMILY: Íµ¥Î¶º;
     TEXT-ALIGN: justify
 }
 INPUT.BTN
@@ -392,7 +394,7 @@ INPUT.BTN
     BORDER-TOP: #d0d0d0 1px ridge;
     BORDER-LEFT: #d0d0d0 1px ridge;
     BORDER-BOTTOM: #d0d0d0 1px ridge;
-    FONT-FAMILY: µ∏øÚ, VERDANA, SANS-SERIF, SERIF;
+    FONT-FAMILY: ÎèãÏõÄ, VERDANA, SANS-SERIF, SERIF;
     BACKGROUND-COLOR: #dfdfdf
 }
 INPUT.RAD
@@ -407,7 +409,7 @@ INPUT.RAD
     BORDER-LEFT: #8f8f8f 1px solid;
     COLOR: #000000;
     BORDER-BOTTOM: #999999 1px solid;
-    FONT-FAMILY: ±º∏≤, VERDANA, SANS-SERIF, SERIF;
+    FONT-FAMILY: Íµ¥Î¶º, VERDANA, SANS-SERIF, SERIF;
     HEIGHT: 20px
 }
 TEXTAREA
@@ -418,38 +420,38 @@ TEXTAREA
     BORDER-LEFT: #8f8f8f 1px solid;
     COLOR: #000000;
     BORDER-BOTTOM: #eeeeee 1px solid;
-    FONT-FAMILY: ±º∏≤, VERDANA, SANS-SERIF, SERIF
+    FONT-FAMILY: Íµ¥Î¶º, VERDANA, SANS-SERIF, SERIF
 }
 #font
 {
     FONT-SIZE: 20pt;
     COLOR: #333333
 }
-.scrollButton	{
-  			position: absolute;
-				height: 20px;
-				overflow: hidden;
-				font-family: ±º∏≤;
-				font-size: 12px;
-				text-align: center;
-				display: none;
-				cursor: hand;
-				background   :#D8D8BF;
-  			border-Left   :1px solid buttonhighlight;
-				border-Right  :1px solid buttonshadow;
-				border-Top    :1px solid buttonhighlight;
-				border-Bottom :1px solid buttonshadow;
-				padding:0px;
-				}
-.flat			{border: 1px solid #cccc99;}
+.scrollButton   {
+            position: absolute;
+                height: 20px;
+                overflow: hidden;
+                font-family: Íµ¥Î¶º;
+                font-size: 12px;
+                text-align: center;
+                display: none;
+                cursor: hand;
+                background   :#D8D8BF;
+            border-Left   :1px solid buttonhighlight;
+                border-Right  :1px solid buttonshadow;
+                border-Top    :1px solid buttonhighlight;
+                border-Bottom :1px solid buttonshadow;
+                padding:0px;
+                }
+.flat           {border: 1px solid #cccc99;}
 
 input.btnComnblue
 { 
-	border-width:1px;
-	background-color:#ADDEE9;
-	font-size:8pt;
-	font-family:µ∏øÚ, seoul, Arial;
-	color:#000000;
-	text-align: center;
-	text-valign: center;
+    border-width:1px;
+    background-color:#ADDEE9;
+    font-size:8pt;
+    font-family:ÎèãÏõÄ, seoul, Arial;
+    color:#000000;
+    text-align: center;
+    text-valign: center;
 }

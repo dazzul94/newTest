@@ -5,6 +5,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
 <html>
 <head>
+<link rel='stylesheet' href='../../node_modules/bootstrap/dist/css/bootstrap.min.css'>
 <style type="text/css">
 .file_input_textbox {float:left; /* height:29px; */width: 180px;}
     .file_input_div {position:relative; width:80px; /* height:36px; */ overflow:hidden;}
@@ -24,12 +25,12 @@ padding: 50px;
    /* margin: 10auto;
    text-align: right;
    padding: 0px;
- */ */
+ */ 
  
  #wrapper{
- border:1px solid #RRBBOO;
+ border:0px;
  width:1054px;
- padding:10px;
+ padding:22px;
  position:absolute;
  top:10px;
  left:50%;
@@ -48,13 +49,15 @@ padding: 50px;
  float:left;
  padding:10px;
  margin-left:10px;
- }
+ 
 }
 </style>
 <link href="${contextPath}/css/style.css" rel="stylesheet" type="text/css">
 
 </head>
 <body topmargin="0" leftmargin="0">
+<div class='container'>
+<jsp:include page="../header.jsp"/>
 <form action="add" method='post' enctype="multipart/form-data">
 <div id= "wrapper"> 
 <div class="left"> 
@@ -353,6 +356,8 @@ var upload = document.getElementsById('upload')[0],
   return false;
 };
 </script> -->
+<jsp:include page="../jslib.jsp"/>
+</div>
 </body>
 </html>
 

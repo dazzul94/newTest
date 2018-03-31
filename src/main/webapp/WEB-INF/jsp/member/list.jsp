@@ -6,6 +6,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">  
 <html> 
 <head>
+<link rel='stylesheet' href='../../node_modules/bootstrap/dist/css/bootstrap.min.css'>
 <style type="text/css">
 /* .left {
     position: absolute;
@@ -20,12 +21,12 @@ padding: 50px;
    /* margin: 10auto;
    text-align: right;
    padding: 0px;
- */ */
+ */ 
  
  #wrapper{
- border:1px solid #RRBBOO;
+ border:0px;
  width:1054px;
- padding:10px;
+ padding:22px;
  position:absolute;
  top:10px;
  left:50%;
@@ -45,11 +46,13 @@ padding: 50px;
  padding:10px;
  margin-left:10px;
  }
-}
+
 </style>
 <link href="${contextPath}/css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body topmargin="0" leftmargin="0">
+<div class='container'>
+<jsp:include page="../header.jsp"/>
 <div id= "wrapper"> 
 <div class="left"> <jsp:include page="../left.jsp"></jsp:include>
 </div>
@@ -94,12 +97,12 @@ padding: 50px;
                 <table width="640" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                         <th width="35" height="20" align="center"></th>
-                        <th width="85" align="center">이름</th>
-                        <th width="153" align="center">주민번호</th>
-                        <th width="91" align="center">성별</th>
-                        <th width="91" align="center">기술등급</th>
-                        <th width="91" align="center">희망직무</th>
-                        <th width="94" align="center">입사유형</th>
+                        <th style="text-align: center"  width="85" align="center">이름</th>
+                        <th style="text-align: center" width="153" align="center">주민번호</th>
+                        <th style="text-align: center" width="91" align="center">성별</th>
+                        <th style="text-align: center" width="91" align="center">기술등급</th>
+                        <th style="text-align: center" width="91" align="center">희망직무</th>
+                        <th style="text-align: center" width="94" align="center">입사유형</th>
                     </tr>
                 <c:forEach items="${list}" var="member">
                     <tr> 
@@ -141,5 +144,7 @@ padding: 50px;
       </table>
     </div>
   </div>
+  <jsp:include page="../jslib.jsp"/>
+</div>
 </body>
 </html>

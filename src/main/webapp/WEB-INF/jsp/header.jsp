@@ -33,7 +33,7 @@
 
 <c:choose>
     <c:when test="${sessionScope.loginUser != null}">
-        ${sessionScope.loginUser.name}
+        ${sessionScope.loginUser.id}
         <a href="${contextPath}/app/auth/logout" 
            class='btn btn-light btn-sm'>로그아웃</a>
     </c:when>
