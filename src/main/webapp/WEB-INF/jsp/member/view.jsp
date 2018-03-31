@@ -183,7 +183,8 @@ padding: 50px;
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
                             <td width="102" align="right"><strong>성별 :&nbsp; </strong></td>
-                            <td width="391"> <input type="radio" name="gender" value="남자" checked="checked">
+                            
+                            <td width="391"> <input type="radio" name="gender" value="남자">
                               남자 
                               <input type="radio" name="gender" value="여자">
                               여자</td>
@@ -214,7 +215,7 @@ padding: 50px;
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
                             <td width="101" align="right"><strong>급여 지급유형 :&nbsp;</strong></td>
-                            <td width="392"> <select name="moneyType">
+                            <td width="392"> <select id ="moneyType" name="moneyType">
                                 <option>월급</option>
                                 <option>주급</option>
                                 <option>일급</option>
@@ -226,7 +227,7 @@ padding: 50px;
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
                             <td width="101" align="right"><strong>희망직무 :&nbsp;</strong></td>
-                            <td width="392"> <select name="workingType">
+                            <td width="392"> <select id = "workingType" name="workingType">
                                 <option>SI</option>
                                 <option>SM</option>
                               </select> </td>
@@ -237,7 +238,7 @@ padding: 50px;
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
                             <td width="101" align="right"><strong>입사유형:&nbsp;</strong></td>
-                            <td width="392"> <select name="welcome">
+                            <td width="392"> <select id = "welcome" name="welcome">
                                 <option>정규직</option>
                                 <option>계약직</option>
                               </select> </td>
@@ -319,10 +320,60 @@ padding: 50px;
   </tr>
    </table>
   </div>
+  <c:set var="calendar" value="${member.calendar}"/>
+  <c:set var="gender" value="${member.gender}"/>
+  <c:set var="wedding" value="${member.wedding}"/>
+  <c:set var="moneyType" value="${member.moneyType}"/>
+  <c:set var="workingType" value="${member.workingType}"/>
+  <c:set var="welcome" value="${member.welcome}"/>
   </c:if>
   </div>
+  
        </form>
+       <jsp:include page="../jslib.jsp"/>
 </body>
+<script type="text/javascript">
+var calendar = '<c:out value="${calendar}"/>';
+var gender = '<c:out value="${gender}"/>';
+var wedding = '<c:out value="${wedding}"/>';
+var moneyType = '<c:out value="${moneyType}"/>';
+var workingType = '<c:out value="${workingType}"/>';
+var welcome = '<c:out value="${welcome}"/>';
+window.onload = function () {
+if (calendar == '양력') {
+$("input:radio[name='calendar']:radio[value='양력']").prop("checked",true);
+} else {
+	$("input:radio[name='calendar']:radio[value='음력']").prop("checked",true);
+	}
+if (gender == '여자') {
+$("input:radio[name='gender']:radio[value='여자']").prop("checked",true);
+} else {
+	$("input:radio[name='gender']:radio[value='남자']").prop("checked",true);
+	}
+if (wedding == '기혼') {
+$("input:radio[name='wedding']:radio[value='기혼']").prop("checked",true);
+} else {
+	$("input:radio[name='wedding']:radio[value='미혼']").prop("checked",true);
+	}
+if (moneyType == '월급') {
+    $("#moneyType option:eq(0)").prop("selected", true);
+	} else if (moneyType == '주급'){
+    $("#moneyType option:eq(1)").prop("selected", true);
+	} else if (moneyType == '일급') {
+    $("#moneyType option:eq(2)").prop("selected", true);
+	}
+if (workingType == 'SI') {
+    $("#workingType option:eq(0)").prop("selected", true);
+	} else {
+    $("#workingType option:eq(1)").prop("selected", true);
+	}
+if (welcome == '정규직') {
+    $("#welcome option:eq(0)").prop("selected", true);
+	} else {
+    $("#welcome option:eq(1)").prop("selected", true);
+	}
+}
+</script>
 </html>
 
     

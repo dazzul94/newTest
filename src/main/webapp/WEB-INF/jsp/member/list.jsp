@@ -65,9 +65,13 @@ padding: 50px;
   <tr> 
     <td><table width="640" border="0" cellspacing="0" cellpadding="0">
         <tr> 
+        <form class="form-inline" action="list">
           <td height="30" align="right"><select name="select" class="INPUT">
-              <option selected>::::: 전체 :::::</option>
-            </select> <input name="textfield" type="text" class="INPUT"> <a href="#"><img src="${contextPath}/image/search.gif" width="49" height="18" border="0" align="absmiddle"></a></td>
+              <option selected value="all">::::: 전체 :::::</option>
+              <option value="kName">이름</option>
+              <option value="myNumber">주민번호</option>
+            </select> <input name="words" type="text" class="INPUT"> <button type="submit" style="background-color: white; border:0px"><img src="${contextPath}/image/search.gif" width="49" height="18" border="0" align="absmiddle"></button></td>
+       </form>
         </tr>
         <tr> 
           <td><table width="640" border="0" cellspacing="0" cellpadding="0">

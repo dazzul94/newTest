@@ -54,10 +54,10 @@ public class MemberController {
     @RequestMapping("list")
     public String list(@RequestParam(value = "pn", defaultValue = "1") int pageNo,
             @RequestParam(value = "ps", defaultValue = "10") int pageSize,
+            @RequestParam(value = "select", required = false) String select,
             @RequestParam(value = "words", required = false) String[] words,
             @RequestParam(value = "oc", required = false) String orderColumn,
             @RequestParam(value = "al", required = false) String align, Model model) throws Exception {
-
         // UI 제어와 관련된 코드는 이렇게 페이지 컨트롤러에 두어야 한다.
         //
         if (pageNo < 1) {
@@ -67,8 +67,11 @@ public class MemberController {
         if (pageSize < 10 || pageSize > 20) {
             pageSize = 10;
         }
-
+        
         HashMap<String, Object> options = new HashMap<>();
+        if (select != null) {
+            options.put("select", select);
+        }
         if (words != null && words[0].length() > 0) {
             options.put("words", words);
         }
