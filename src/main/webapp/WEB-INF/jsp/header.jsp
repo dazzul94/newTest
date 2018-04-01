@@ -7,8 +7,6 @@
 <header>
 <nav class='navbar navbar-expand-lg navbar-light bg-light'>
 <a class='navbar-brand' href='../index.html'>
-  <img src='${contextPath}/images/bootstrap-solid.svg' width='30' height='30' class='d-inline-block align-top' alt=''>
-  비트캠프
 </a>
 
 <c:if test="${empty menuVisible or menuVisible == true}">
@@ -18,16 +16,12 @@
 <div class='collapse navbar-collapse' id='navbarNav'>
 <ul class='navbar-nav mr-auto'>
   <li class='nav-item'>
-    <a class='nav-link' href='../score/list'>성적</a>
   </li>
   <li class='nav-item'>
-    <a class='nav-link' href='../member/list'>회원</a>
   </li>
   <li class='nav-item'>
-    <a class='nav-link' href='../board/list'>게시판</a>
   </li>
   <li class='nav-item'>
-    <a class='nav-link' href='../room/list'>강의실</a>
   </li>
 </ul>
 

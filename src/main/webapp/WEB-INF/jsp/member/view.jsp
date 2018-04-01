@@ -114,7 +114,7 @@ padding: 50px;
                             <tr>
                               <td height="112" bgcolor="#CCCCCC"><table width="100" border="0" cellspacing="1" cellpadding="0">
                                   <tr>
-                                    <td height="110" bgcolor="#FFFFFF"><img src="${contextPath}/download/${member.photo}" width="100%" height="110"></td>
+                                    <td height="110" bgcolor="#FFFFFF"><img src="${contextPath}/download/${member.photo}" width="100%" height="110" alt=""></td>
                                   </tr>
                               </table></td>
                             </tr>
@@ -319,12 +319,10 @@ padding: 50px;
         <tr>
           <td height="3" align="center"><table width="107" border="0" cellpadding="1" cellspacing="1">
             <tr>
-              <td width="49">
-              <input name="originalFilename" type="hidden" value="${member.photo}" size="40">
-              <button>수정</button>
-              </td>
-              <td width="51"><img src="${contextPath}/image/bt_cancel.gif" width="49" height="18"></td>
-              <td><a href='delete?no=${member.memberNo}' class='btn btn-primary btn-sm'>삭제</a></td>
+              <td width="49"><button type="submit" style="background-color: white; border:0px"><img src="${contextPath}/image/bt_remove.gif" width="49" height="18"></button></td>
+              <td width="51"><a href='list'><img src="${contextPath}/image/bt_cancel.gif" width="49" height="18"></a></td>
+              <td width="51">&nbsp;</td>
+              <td width="51"><a href='delete?no=${member.memberNo}'><img border="0" src="${contextPath}/image/delete.png" width="20" height="20"></a></td>
             </tr>
           </table>            </td>
         </tr>
@@ -343,12 +341,20 @@ padding: 50px;
   <c:set var="welcome" value="${member.welcome}"/>
   </c:if>
   </div>
-  
+  <input name="originalFilename" type="hidden" value="${member.photo}" size="40">
        </form>
        <jsp:include page="../jslib.jsp"/>
        </div>
 </body>
 <script type="text/javascript">
+/* function button_event(){
+	if (confirm("정말 삭제하시겠습니까??") == true){    //확인
+	    document.write("삭제되었습니다");
+	}else{   //취소
+	    return;
+	}
+	} */
+
 var calendar = '<c:out value="${calendar}"/>';
 var gender = '<c:out value="${gender}"/>';
 var wedding = '<c:out value="${wedding}"/>';

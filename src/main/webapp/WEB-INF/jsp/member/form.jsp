@@ -186,7 +186,7 @@ padding: 50px;
                               월 
                               <input name="day" type="text" size="7">
                               일 ( 
-                              <input type="radio" name="calendar" value="양력">
+                              <input type="radio" name="calendar" value="양력" checked="checked">
                               양력 
                               <input type="radio" name="calendar" value="음력">
                               음력 )</td>
@@ -197,7 +197,7 @@ padding: 50px;
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
                             <td width="102" align="right"><strong>성별 :&nbsp; </strong></td>
-                            <td width="391"> <input type="radio" name="gender" value="남자">
+                            <td width="391"> <input type="radio" name="gender" value="남자" checked="checked">
                               남자 
                               <input type="radio" name="gender" value="여자">
                               여자</td>
@@ -208,7 +208,7 @@ padding: 50px;
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
                             <td width="102" align="right"><strong>결혼유무 :&nbsp;</strong></td>
-                            <td width="391"> <input type="radio" name="wedding" value="기혼">
+                            <td width="391"> <input type="radio" name="wedding" value="기혼" checked="checked">
                               기혼 
                               <input type="radio" name="wedding" value="미혼">
                               미혼</td>
