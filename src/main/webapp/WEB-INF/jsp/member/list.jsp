@@ -83,7 +83,7 @@ padding: 50px;
               </tr>
               <tr align="center" bgcolor="F8F8F8"> 
                 <td height="26" align="right" bgcolor="F8F8F8" style="padding-right:10"><img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
-                  <a href="#">수정</a> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
+                  <a href="javascript:modify()">수정</a> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
                   <a href="#">인사기록카드</a> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
                   <a href="#">경력정보</a> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
                   <a href="#">근무정보</a> </td>
@@ -106,7 +106,7 @@ padding: 50px;
                     </tr>
                 <c:forEach items="${list}" var="member">
                     <tr> 
-                      <td width="35" height="20" align="center"><input type="checkbox" name="no" value="${member.memberNo}"></td>
+                      <td width="35" height="20" align="center"><input type="checkbox" id="check" value="${member.memberNo}"></td>
                       <td width="85" align="center"><a href="${member.memberNo}"><span class="d-inline-block text-truncate" 
             style="max-width: 300px;">${member.kName}</span></a></td>
                       <td width="153" align="center">${member.myNumber1}-${member.myNumber2}</td>
@@ -131,7 +131,7 @@ padding: 50px;
               </tr>
               <tr align="center" bgcolor="F8F8F8"> 
                 <td height="26" align="right" bgcolor="F8F8F8" style="padding-right:10"><img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
-                  <a href="#">수정</a> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
+                  <a href="javascript:modify()">수정</a> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
                   <a href="#">인사기록카드</a> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
                   <a href="#">경력정보</a> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
                   <a href="#">근무정보</a> </td>
@@ -146,5 +146,20 @@ padding: 50px;
   </div>
   <jsp:include page="../jslib.jsp"/>
 </div>
+<script type="text/javascript">
+$(function() { 
+	$('input[type="checkbox"]').bind('click',function() { 
+		$('input[type="checkbox"]').not(this).prop("checked", false); 
+		});
+	});
+
+function modify(){
+var checkNo = $('input:checkbox[id="check"]').val(); //왜 마지막 값만 나올까?
+alert(checkNo);
+alert($('input:checkbox[name="checkbox_name"]').length);
+window.location = checkNo;
+}
+</script>
 </body>
 </html>
+ 

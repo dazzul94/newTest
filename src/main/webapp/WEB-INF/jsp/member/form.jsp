@@ -318,7 +318,7 @@ padding: 50px;
           <td height="3" align="center"><table width="107" border="0" cellpadding="1" cellspacing="1">
             <tr>
               <td width="49">
-                <button>등록</button>
+                <button>확인</button>
          
               <%-- <img src="${contextPath}/image/bt_remove.gif" width="49" height="18"> --%>
               </td>
