@@ -79,6 +79,14 @@
 	        expression="execution(* java100.app.service..*ServiceImpl.*(..))"/>
 	    <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceOperation"/>
 	</aop:config>
+	
+	<!-- <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/auth/**"/>
+            <bean class="java100.app.web.interceptor.AuthInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors> -->
 </beans>
 
 
