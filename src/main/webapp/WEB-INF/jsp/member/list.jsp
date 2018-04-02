@@ -104,7 +104,7 @@ padding: 50px;
                         <th style="text-align: center" width="91" align="center">희망직무</th>
                         <th style="text-align: center" width="94" align="center">입사유형</th>
                     </tr>
-                <c:forEach items="${list}" var="member">
+                <c:forEach items="${list}" var="member" varStatus="status">
                     <tr> 
                       <td width="35" height="20" align="center"><input type="checkbox" id="check" value="${member.memberNo}"></td>
                       <td width="85" align="center"><a href="${member.memberNo}"><span class="d-inline-block text-truncate" 
@@ -118,7 +118,7 @@ padding: 50px;
                     <tr> 
                       <td colspan="7" background="${contextPath}/image/line_bg.gif"></td>
                     </tr>
-                    </c:forEach>
+                    </c:forEach> 
                       <td height="35" colspan="7" align="center" style="padding-bottom:3"><a href="list?pn=1"><img src="${contextPath}/image/prev.gif" width="22" height="15" border="0" align="absmiddle"></a>&nbsp;<a href="list?pn=${pageNo - 1}"><img src="${contextPath}/image/pre.gif" width="42" height="15" border="0" align="absmiddle"></a>&nbsp; 
                         <a href="list?pn=1">1</a> | <a href="list?pn=2">2</a> | <a href="list?pn=3">3</a> | <a href="list?pn=4">4</a> | <a href="list?pn=5">5</a> | <a href="list?pn=6">6</a> | <a href="list?pn=7">7</a> | <a href="list?pn=8">8</a> | <a href="list?pn=9">9</a> | <a href="list?pn=10">10</a> &nbsp;<a href="list?pn=${pageNo + 1}"><img src="${contextPath}/image/next.gif" width="42" height="15" border="0" align="absmiddle"></a>&nbsp;<a href="list?pn=${lastPageNo}"><img src="${contextPath}/image/next_.gif" width="22" height="15" border="0" align="absmiddle"></a></td>
                     </tr>
@@ -154,9 +154,9 @@ $(function() {
 	});
 
 function modify(){
-var checkNo = $('input:checkbox[id="check"]').val(); //왜 마지막 값만 나올까?
+var checkNo = $("input:checkbox:checked").val(); //왜 마지막 값만 나올까?
 alert(checkNo);
-alert($('input:checkbox[name="checkbox_name"]').length);
+alert($('input:checkbox[id="check"]').length);
 window.location = checkNo;
 }
 </script>
