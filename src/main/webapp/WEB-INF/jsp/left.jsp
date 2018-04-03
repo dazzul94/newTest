@@ -56,25 +56,28 @@
   <tr> 
     <td>&nbsp;</td>
   </tr>
-  <tr> 
+  <%-- <tr> 
     <td align="center"><table width="170" height="49" border="0" cellpadding="0" cellspacing="0">
         <tr> 
           <td align="center" background="${contextPath}/image/left_box.gif">
           <!------------------------------ 경력검색 ---------------------------------->
+          <form class="form-inline" action="list">
           <table width="155" border="0" cellspacing="0" cellpadding="0">
               <tr> 
                 <td width="17"><img src="${contextPath}/image/left_icon.gif" width="11" height="11" align="absmiddle"></td>
-                <td width="143" height="20"><strong>경력검색</strong></td>
+                <td width="143" height="20"><strong>&nbsp;경력검색</strong></td>
               </tr>
-              <tr align="right"> 
-                <td colspan="2"><input name="textfield" type="text" class="flat" size="15" maxlength="14"> 
-                  <img src="${contextPath}/image/search.gif" width="49" height="18" align="absmiddle"></td>
+              <tr> 
+                <td colspan="2"><input name="words" type="text" class="flat" size="15" maxlength="14"> 
+                <input type="hidden" name="select" value="career"></td>
+                  <td><button type="submit" style="background-color: white; border:0px"><img src="${contextPath}/image/search.gif" width="49" height="18" align="absmiddle" style="cursor:pointer"></button></td>
               </tr>
             </table>
+            </form>
           <!------------------------------ 경력검색 ---------------------------------->
             </td>
         </tr>
       </table></td>
-  </tr>
+  </tr> --%>
 </table>
 

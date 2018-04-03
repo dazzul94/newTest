@@ -70,10 +70,10 @@ padding: 50px;
         <tr> 
         <form class="form-inline" action="list">
           <td height="30" align="right"><select name="select" class="INPUT">
-              <option selected value="all">::::: 전체 :::::</option>
-              <option value="kName">이름</option>
-              <option value="myNumber">주민번호</option>
-            </select> <input name="words" type="text" class="INPUT"> <button type="submit" style="background-color: white; border:0px"><img src="${contextPath}/image/search.gif" width="49" height="18" border="0" align="absmiddle"></button></td>
+              <option selected value="kName">이름</option>
+              <option value="gender">성별</option>
+              <option value="stat">기술등급</option>
+            </select> <input name="words" type="text" class="INPUT"> <button type="submit" style="background-color: white; border:0px"><img src="${contextPath}/image/search.gif" width="49" height="18" border="0" align="absmiddle" style="cursor:pointer"></button></td>
        </form>
         </tr>
         <tr> 

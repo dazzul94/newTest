@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+  <p id="status">&nbsp;</p>
+  <p><input type=file id="prevv"></p>
+  <div id="holder"></div>
+<script>
+var upload = document.getElementById('prevv'),
+    holder = document.getElementById('holder'),
+    state = document.getElementById('status');
+
+if (typeof window.FileReader === 'undefined') {
+  state.className = 'fail';
+} else {
+  state.className = 'success';
+}
+ 
+upload.onchange = function (e) {
+  e.preventDefault();
+
+  var file = upload.files[0],
+      reader = new FileReader();
+  reader.onload = function (event) {
+    var img = new Image();
+    img.src = event.target.result;
+    // note: no onload required since we've got the dataurl...I think! :)
+    if (img.height > 110) { // holder width
+      img.height = 110;
+    }
+    holder.innerHTML = '';
+    holder.appendChild(img);
+  };
+  reader.readAsDataURL(file);
+
+  return false;
+};
+</script>
+</body>
+</html>
