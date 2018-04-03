@@ -56,7 +56,6 @@ padding: 50px;
 
 </head>
 <body topmargin="0" leftmargin="0">
-<p id="status">&nbsp;</p>
 <div class='container'>
 <jsp:include page="../header.jsp"/>
 <form action="update" method='post' enctype="multipart/form-data">
@@ -343,6 +342,7 @@ padding: 50px;
        </form>
        <jsp:include page="../jslib.jsp"/>
        </div>
+       <p id="status">&nbsp;</p>
 </body>
 <script type="text/javascript">
 /* function button_event(){

@@ -13,6 +13,7 @@
 <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td><table width="100%" height="218" border="0" cellpadding="0" cellspacing="0">
+        <tr><img style="height: 200px" src="${contextPath}/image/white.PNG""></tr>
         <tr>
           <td align="center" background="${contextPath}/image/bg.gif"><table width="595" height="218" border="0" cellpadding="0" cellspacing="0">
               <tr> 
@@ -35,7 +36,7 @@
                                 <tr> 
                                   <td width="75" height="20" align="right"><img src="${contextPath}/image/id.gif" width="54" height="10">&nbsp;</td>
                                   <td width="174"><input name="id" type="text" class="INPUT" size="25"></td>
-                                  <td width="91" rowspan="2" align="right"><button style="background: #EFEFEF; border: 0px;" type="submit"><img src="${contextPath}/image/login_button.gif" width="90" height="40" border="0"></button></td>
+                                  <td width="91" rowspan="2" align="right"><button style="background: #EFEFEF; border: 0px;" type="submit"><img src="${contextPath}/image/login_button.gif" width="90" height="40" border="0" style="cursor:pointer"></button></td>
                                 </tr>
                                 <tr> 
                                   <td align="right"><img src="${contextPath}/image/pass.gif" width="54" height="10">&nbsp;</td>
