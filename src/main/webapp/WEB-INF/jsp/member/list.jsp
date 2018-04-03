@@ -127,7 +127,6 @@ padding: 50px;
                         <c:set var="nextPageDisabled" value="${(pageNo < lastPageNo) ? '':'disabled'}"/>
                         <c:set var="nextPageTabIndex" value="${(pageNo < lastPageNo) ? 0 : -1}"/>
                       <a href="list?pn=1"><img src="${contextPath}/image/prev.gif" width="22" height="15" border="0" align="absmiddle"></a>&nbsp;
-						<nav aria-label="Page navigation">
 						  <ul class="pagination justify-content-center">
 						    <li class="page-item ${prevPageDisabled}"><a class="page-link" 
 						        href="list?pn=${pageNo - 1}"
@@ -139,7 +138,6 @@ padding: 50px;
 						        href="list?pn=${pageNo + 1}"
 						        tabindex="${nextPageTabIndex}"><img src="${contextPath}/image/next.gif" width="42" height="15" border="0" align="absmiddle"></a></li>
 						  </ul>
-						</nav>
                       <a href="list?pn=${lastPageNo}"><img src="${contextPath}/image/next_.gif" width="22" height="15" border="0" align="absmiddle"></a>
                         </td>
                     </tr>
