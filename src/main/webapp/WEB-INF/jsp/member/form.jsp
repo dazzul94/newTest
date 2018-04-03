@@ -348,8 +348,8 @@ if (typeof window.FileReader === 'undefined') {
  
 upload.onchange = function (e) {
   e.preventDefault();
-  console.log(this.value)
-  document.getElementById('fileName').value = this.value;
+  var strArray = this.value.split('\\');
+  document.getElementById('fileName').value = strArray[strArray.length-1];
   var file = upload.files[0],
       reader = new FileReader();
   reader.onload = function (event) {
