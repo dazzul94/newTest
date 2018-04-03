@@ -27,9 +27,9 @@
 
 <c:choose>
     <c:when test="${sessionScope.loginUser != null}">
-        ${sessionScope.loginUser.id}
+        관리자  &nbsp;
         <a href="${contextPath}/app/auth/logout" 
-           class='btn btn-light btn-sm'>로그아웃</a>
+           class='btn btn-outline-danger btn-sm'>로그아웃</a>
     </c:when>
 
     <c:otherwise>
