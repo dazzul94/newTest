@@ -227,11 +227,10 @@ padding: 50px;
                     <tr> 
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
-                            <td width="101" align="right"><strong>급여 지급유형 :&nbsp;</strong></td>
+                            <td width="101" align="right"><strong>상태 :&nbsp;</strong></td>
                             <td width="392"> <select name="moneyType">
                                 <option>월급</option>
                                 <option>주급</option>
-                                <option>일급</option>
                               </select> </td>
                           </tr>
                         </table></td>
@@ -250,7 +249,7 @@ padding: 50px;
                     <tr> 
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
-                            <td width="101" align="right"><strong>입사유형 :&nbsp;</strong></td>
+                            <td width="101" align="right"><strong>근무 :&nbsp;</strong></td>
                             <td width="392"> <select name="welcome">
                                 <option>정규직</option>
                                 <option>계약직</option>
@@ -318,7 +317,7 @@ padding: 50px;
           <td height="3" align="center"><table width="107" border="0" cellpadding="1" cellspacing="1">
             <tr>
               <td width="49">
-                <button>확인</button>
+                <button>등록</button>
          
               <%-- <img src="${contextPath}/image/bt_remove.gif" width="49" height="18"> --%>
               </td>

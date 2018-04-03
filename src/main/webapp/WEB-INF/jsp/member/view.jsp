@@ -229,11 +229,10 @@ padding: 50px;
                     <tr> 
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
-                            <td width="101" align="right"><strong>급여 지급유형 :&nbsp;</strong></td>
+                            <td width="101" align="right"><strong>상태 :&nbsp;</strong></td>
                             <td width="392"> <select id ="moneyType" name="moneyType">
                                 <option>월급</option>
                                 <option>주급</option>
-                                <option>일급</option>
                               </select> </td>
                           </tr>
                         </table></td>
@@ -252,7 +251,7 @@ padding: 50px;
                     <tr> 
                       <td bgcolor="#E4EBF1"><table width="500" border="0" cellspacing="1" cellpadding="1">
                           <tr> 
-                            <td width="101" align="right"><strong>입사유형 :&nbsp;</strong></td>
+                            <td width="101" align="right"><strong>근무 :&nbsp;</strong></td>
                             <td width="392"> <select id = "welcome" name="welcome">
                                 <option>정규직</option>
                                 <option>계약직</option>
@@ -377,11 +376,9 @@ $("input:radio[name='wedding']:radio[value='기혼']").prop("checked",true);
 	}
 if (moneyType == '월급') {
     $("#moneyType option:eq(0)").prop("selected", true);
-	} else if (moneyType == '주급'){
+	} else {
     $("#moneyType option:eq(1)").prop("selected", true);
-	} else if (moneyType == '일급') {
-    $("#moneyType option:eq(2)").prop("selected", true);
-	}
+	} 
 if (workingType == 'SI') {
     $("#workingType option:eq(0)").prop("selected", true);
 	} else {

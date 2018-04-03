@@ -102,8 +102,8 @@ padding: 50px;
                         <th style="text-align: center" width="153" align="center">주민번호</th>
                         <th style="text-align: center" width="91" align="center">성별</th>
                         <th style="text-align: center" width="91" align="center">기술등급</th>
-                        <th style="text-align: center" width="91" align="center">희망직무</th>
-                        <th style="text-align: center" width="94" align="center">입사유형</th>
+                        <th style="text-align: center" width="91" align="center">상태</th>
+                        <th style="text-align: center" width="94" align="center">근무</th>
                     </tr>
                 <c:forEach items="${list}" var="member" varStatus="status">
                     <tr> 
@@ -113,7 +113,7 @@ padding: 50px;
                       <td width="153" align="center">${member.myNumber1}-${member.myNumber2}</td>
                       <td width="91" align="center">${member.gender}</td>
                       <td width="91" align="center">${member.stat}</td>
-                      <td width="91" align="center">${member.workingType}</td>
+                      <td width="91" align="center">${member.moneyType}</td>
                       <td width="94" align="center">${member.welcome}</td>
                     </tr>
                     <tr> 
