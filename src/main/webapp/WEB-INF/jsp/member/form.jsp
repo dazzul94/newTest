@@ -56,6 +56,7 @@ padding: 50px;
 
 </head>
 <body topmargin="0" leftmargin="0">
+<p id="status">&nbsp;</p>
 <div class='container'>
 <jsp:include page="../header.jsp"/>
 <form action="add" method='post' enctype="multipart/form-data">
@@ -114,7 +115,7 @@ padding: 50px;
                             <tr>
                               <td height="112" bgcolor="#CCCCCC"><table width="100" border="0" cellspacing="1" cellpadding="0">
                                   <tr>
-                                    <td id="holder" height="110" bgcolor="#FFFFFF">&nbsp;</td>
+                                    <td height="110" bgcolor="#FFFFFF"><div id="holder"></div></td>
                                   </tr>
                               </table></td>
                             </tr>
@@ -168,7 +169,7 @@ padding: 50px;
                             <input type="text" id="fileName" class="file_input_textbox" readonly >
                             <div class="file_input_div">
                             <img src="${contextPath}/image/bt_search.gif" class="file_input_img_btn" alt="open" />
-                            <input type="file" name="file" class="file_input_hidden" size="40" onchange="javascript: document.getElementById('fileName').value = this.value"/>
+                            <input type="file" name="file" class="file_input_hidden" size="40" id="prevv"/>
                             </div>
                             </div>
                             </td>
@@ -334,29 +335,41 @@ padding: 50px;
   </div>
   </div>
        </form>
-      <!--  <script>
-var upload = document.getElementsById('upload')[0],
+<script>
+ var upload = document.getElementById('prevv'),
     holder = document.getElementById('holder'),
+    state = document.getElementById('status');
 
-  var file = upload.file,
+if (typeof window.FileReader === 'undefined') {
+  state.className = 'fail';
+} else {
+  state.className = 'success';
+}
+ 
+upload.onchange = function (e) {
+  e.preventDefault();
+  console.log(this.value)
+  document.getElementById('fileName').value = this.value;
+  var file = upload.files[0],
       reader = new FileReader();
   reader.onload = function (event) {
-    var img = new Image();
-    img.src = event.target.result;
+    var imge = new Image();
+    imge.src = event.target.result;
     // note: no onload required since we've got the dataurl...I think! :)
-    if (img.height > 110) { // holder width
-      img.height = 110;
-    }
+      imge.height = 112;
+      imge.width = 100;
     holder.innerHTML = '';
-    holder.appendChild(img);
+    holder.appendChild(imge);
   };
   reader.readAsDataURL(file);
 
   return false;
-};
-</script> -->
+}; 
+
+</script>
 <jsp:include page="../jslib.jsp"/>
 </div>
+<p id="status">&nbsp;</p>
 </body>
 </html>
 
