@@ -10,6 +10,7 @@ public class Member {
     String myNumber2; //주민번호
     String photo; 
     String originalFilename;
+    String preShortFilename;
     String year;
     String month;
     String day;
@@ -184,15 +185,23 @@ public class Member {
     public void setAlchol(String alchol) {
         this.alchol = alchol;
     }
+    
+    public String getPreShortFilename() {
+        return preShortFilename;
+    }
+    public void setPreShortFilename(String preShortFilename) {
+        this.preShortFilename = preShortFilename;
+    }
     @Override
     public String toString() {
         return "Member [memberNo=" + memberNo + ", kName=" + kName + ", eName=" + eName + ", jName=" + jName
                 + ", myNumber1=" + myNumber1 + ", myNumber2=" + myNumber2 + ", photo=" + photo + ", originalFilename="
-                + originalFilename + ", year=" + year + ", month=" + month + ", day=" + day + ", calendar=" + calendar
-                + ", gender=" + gender + ", wedding=" + wedding + ", career=" + career + ", moneyType=" + moneyType
-                + ", workingType=" + workingType + ", welcome=" + welcome + ", address=" + address + ", detailAddress="
-                + detailAddress + ", phoneNumber1=" + phoneNumber1 + ", phoneNumber2=" + phoneNumber2
-                + ", phoneNumber3=" + phoneNumber3 + ", email=" + email + ", stat=" + stat + ", alchol=" + alchol + "]";
+                + originalFilename + ", preShortFilename=" + preShortFilename + ", year=" + year + ", month=" + month
+                + ", day=" + day + ", calendar=" + calendar + ", gender=" + gender + ", wedding=" + wedding
+                + ", career=" + career + ", moneyType=" + moneyType + ", workingType=" + workingType + ", welcome="
+                + welcome + ", address=" + address + ", detailAddress=" + detailAddress + ", phoneNumber1="
+                + phoneNumber1 + ", phoneNumber2=" + phoneNumber2 + ", phoneNumber3=" + phoneNumber3 + ", email="
+                + email + ", stat=" + stat + ", alchol=" + alchol + "]";
     }
    
     

@@ -104,7 +104,8 @@ public class MemberController {
         if (bindingResult.hasErrors()) {
             System.out.println("파라미터 값을 변환하는 중에 오류 발생!");
         }
-        System.out.println(file.getOriginalFilename());
+        System.out.println("이전 사진 이름: " + member.getOriginalFilename());
+        System.out.println("바뀐 사진 이름: " + file.getOriginalFilename());
         if (file.getOriginalFilename().equals("")) {
             System.out.println("사진 등록 X");
             member.setPhoto(member.getOriginalFilename());

@@ -32,13 +32,14 @@
       <result column="email" property="email" />
       <result column="stat" property="stat" />
       <result column="alchol" property="alchol" />
+      <result column="preshortfilename" property="preShortFilename" />
    </resultMap>
 
 	<insert id="insert" parameterType="member"
 		useGeneratedKeys="true" keyColumn="memberno" keyProperty="memberNo">
 		insert into
-		member(kname,ename,jname,mynumber1,mynumber2,photo,year,month,day,calendar,gender,wedding,career,moneytype,workingtype,welcome,address,detailaddress,phonenumber1,phonenumber2,phonenumber3,email,stat,alchol)
-		values(#{kName},#{eName},#{jName},#{myNumber1},#{myNumber2},#{photo},#{year},#{month},#{day},#{calendar},#{gender},#{wedding},#{career},#{moneyType},#{workingType},#{welcome},#{address},#{detailAddress},#{phoneNumber1},#{phoneNumber2},#{phoneNumber3},#{email},#{stat},#{alchol})
+		member(kname,ename,jname,mynumber1,mynumber2,photo,year,month,day,calendar,gender,wedding,career,moneytype,workingtype,welcome,address,detailaddress,phonenumber1,phonenumber2,phonenumber3,email,stat,alchol,preshortfilename)
+		values(#{kName},#{eName},#{jName},#{myNumber1},#{myNumber2},#{photo},#{year},#{month},#{day},#{calendar},#{gender},#{wedding},#{career},#{moneyType},#{workingType},#{welcome},#{address},#{detailAddress},#{phoneNumber1},#{phoneNumber2},#{phoneNumber3},#{email},#{stat},#{alchol},#{preShortFilename})
 	</insert>
 	<select id="findAll" resultMap="memberMap" parameterType="map">
 		select
@@ -152,7 +153,8 @@
        phonenumber3=#{phoneNumber3},
        email=#{email},
        stat=#{stat},
-       alchol=#{alchol}
+       alchol=#{alchol},
+       preshortfilename=#{preShortFilename}
 	   where memberno=#{memberNo}
 	</update>
 

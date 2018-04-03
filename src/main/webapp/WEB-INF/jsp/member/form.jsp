@@ -166,7 +166,7 @@ padding: 50px;
                             <td width="102" align="right"><strong>사진파일명 :&nbsp;</strong></td>
                             <td width="268">
                             <div>
-                            <input type="text" id="fileName" class="file_input_textbox" readonly >
+                            <input type="text" id="fileName" name="preShortFilename" class="file_input_textbox" readonly >
                             <div class="file_input_div">
                             <img src="${contextPath}/image/bt_search.gif" class="file_input_img_btn" alt="open" />
                             <input type="file" name="file" class="file_input_hidden" size="40" id="prevv"/>
@@ -369,7 +369,6 @@ upload.onchange = function (e) {
 </script>
 <jsp:include page="../jslib.jsp"/>
 </div>
-<p id="status">&nbsp;</p>
 </body>
 </html>
 

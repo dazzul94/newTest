@@ -56,6 +56,7 @@ padding: 50px;
 
 </head>
 <body topmargin="0" leftmargin="0">
+<p id="status">&nbsp;</p>
 <div class='container'>
 <jsp:include page="../header.jsp"/>
 <form action="update" method='post' enctype="multipart/form-data">
@@ -114,7 +115,7 @@ padding: 50px;
                             <tr>
                               <td height="112" bgcolor="#CCCCCC"><table width="100" border="0" cellspacing="1" cellpadding="0">
                                   <tr>
-                                    <td height="110" bgcolor="#FFFFFF"><img src="${contextPath}/download/${member.photo}" width="100%" height="112" alt=""></td>
+                                    <td height="110" bgcolor="#FFFFFF"><div id="holder"><img src="${contextPath}/download/${member.photo}" width="100%" height="112" alt=""></div></td>
                                   </tr>
                               </table></td>
                             </tr>
@@ -166,10 +167,10 @@ padding: 50px;
                             <td width="102" align="right"><strong>사진파일명 :&nbsp;</strong></td>
                             <td width="268">
                             <div>
-                            <input type="text" id="fileName" value="${member.photo}" class="file_input_textbox" readonly >
+                            <input type="text" id="fileName" name="preShortFilename" value="${member.preShortFilename}" class="file_input_textbox" readonly >
                             <div class="file_input_div">
                             <img src="${contextPath}/image/bt_search.gif" class="file_input_img_btn" alt="open" />
-                            <input type="file" name="file" class="file_input_hidden" size="40" onchange="javascript: document.getElementById('fileName').value = this.value"/>
+                            <input type="file" name="file" class="file_input_hidden" size="40" id="prevv"/>
                             </div>
                             </div>
                             </td>
@@ -390,6 +391,37 @@ if (welcome == '정규직') {
     $("#welcome option:eq(1)").prop("selected", true);
 	}
 }
+
+var upload = document.getElementById('prevv'),
+holder = document.getElementById('holder'),
+state = document.getElementById('status');
+
+if (typeof window.FileReader === 'undefined') {
+state.className = 'fail';
+} else {
+state.className = 'success';
+}
+
+upload.onchange = function (e) {
+e.preventDefault();
+var strArray = this.value.split('\\');
+document.getElementById('fileName').value = strArray[strArray.length-1];
+var file = upload.files[0],
+  reader = new FileReader();
+reader.onload = function (event) {
+var imge = new Image();
+imge.src = event.target.result;
+// note: no onload required since we've got the dataurl...I think! :)
+  imge.height = 112;
+  imge.width = 100;
+holder.innerHTML = '';
+holder.appendChild(imge);
+};
+reader.readAsDataURL(file);
+
+return false;
+}; 
+
 </script>
 </html>
 
