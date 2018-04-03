@@ -51,6 +51,10 @@ public class MemberServiceImpl implements MemberService {
     public int delete(int no) {
         return memberDao.delete(no);
     }
+    @Override
+    public int deleteAll(HashMap<String, Object> numbers) {
+        return memberDao.deleteAll(numbers);
+    }
     
 
 }

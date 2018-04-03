@@ -124,6 +124,22 @@ public class MemberController {
         memberService.delete(no);
         return "redirect:list";
     }
+    @RequestMapping("deleteAll")
+    public String deleteAll(String no) throws Exception {
+        
+        String[] splitNo = no.split(",");
+        int[] realNo = new int[splitNo.length];;
+        for (int i = 0; i < splitNo.length; i++) {
+            realNo[i] = Integer.parseInt(splitNo[i]);
+            System.out.println(realNo[i]);
+        }
+        HashMap<String,Object> numbers = new HashMap<>();
+        if (realNo != null) {
+            numbers.put("numbers", realNo);
+        }
+        memberService.deleteAll(numbers);
+        return "redirect:list";
+    }
 
     long prevMillis = 0;
     int count = 0;

@@ -107,7 +107,7 @@ padding: 50px;
                     </tr>
                 <c:forEach items="${list}" var="member" varStatus="status">
                     <tr> 
-                      <td width="35" height="20" align="center"><input type="checkbox" id="check" value="${member.memberNo}"></td>
+                      <td width="35" height="20" align="center"><input type="checkbox" id="check" value="${member.memberNo}" class="checkSelect"></td>
                       <td width="85" align="center"><a href="${member.memberNo}"><span class="d-inline-block text-truncate" 
             style="max-width: 300px;">${member.kName}</span></a></td>
                       <td width="153" align="center">${member.myNumber1}-${member.myNumber2}</td>
@@ -149,11 +149,7 @@ padding: 50px;
   <jsp:include page="../jslib.jsp"/>
 </div>
 <script type="text/javascript">
-$(function() { 
-	$('input[type="checkbox"]').bind('click',function() { 
-		$('input[type="checkbox"]').not(this).prop("checked", false); 
-		});
-	});
+
 function really(){
 	if (confirm("정말 삭제하시겠습니까??") == true){    //확인
 	    remove();
@@ -162,13 +158,30 @@ function really(){
 	}
 }
 function modify(){
+	
 var checkNo = $("input:checkbox:checked").val(); 
 window.location = checkNo;
 }
 function remove(){
-var checkNo = $("input:checkbox:checked").val(); 
-window.location = "delete?no=" + checkNo;
+	alert("체크된 개수 : "  + $("input:checkbox:checked").length)
+/* var checkNo = $("input:checkbox:checked").val(); 
+window.location = "delete?no=" + checkNo; */
+	var send_array = Array();
+	var send_cnt = 0;
+	var chkbox = $(".checkSelect");
+
+	for(i=0;i<chkbox.length;i++) {
+	    if (chkbox[i].checked == true){
+	        send_array[send_cnt] = chkbox[i].value;
+	        send_cnt++;
+	    }
+	}
+	window.location = "deleteAll?no=" + send_array;
+	/* $("#array").val(send_array); */
+	
 }
+
+
 </script>
 </body>
 </html>

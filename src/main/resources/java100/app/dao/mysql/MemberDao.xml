@@ -143,6 +143,16 @@
 		delete from member
 		where memberno=#{value}
 	</delete>
+	
+	<delete id="deleteAll" parameterType="map">
+	<if test="numbers != null">
+                <foreach collection="numbers" item="number">
+                   delete from member
+                   where memberno=${number};
+                </foreach>
+        </if>
+        
+	</delete>
 </mapper>  
 
 

@@ -1,5 +1,6 @@
 package java100.app.dao;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -13,4 +14,5 @@ public interface MemberDao {
     Member findByNo(int no);
     int update(Member member);
     int delete(int no);
+    int deleteAll(HashMap<String, Object> numbers);
 }
