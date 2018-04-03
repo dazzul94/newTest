@@ -84,6 +84,7 @@ padding: 50px;
               <tr align="center" bgcolor="F8F8F8"> 
                 <td height="26" align="right" bgcolor="F8F8F8" style="padding-right:10"><img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
                   <a href="javascript:modify()">수정</a> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
+                  <span style="cursor:pointer" onclick="really()">삭제</span> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
                   <a href="#">인사기록카드</a> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
                   <a href="#">경력정보</a> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
                   <a href="#">근무정보</a> </td>
@@ -132,6 +133,7 @@ padding: 50px;
               <tr align="center" bgcolor="F8F8F8"> 
                 <td height="26" align="right" bgcolor="F8F8F8" style="padding-right:10"><img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
                   <a href="javascript:modify()">수정</a> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
+                  <span style="cursor:pointer" onclick="really()">삭제</span><img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
                   <a href="#">인사기록카드</a> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
                   <a href="#">경력정보</a> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
                   <a href="#">근무정보</a> </td>
@@ -152,12 +154,20 @@ $(function() {
 		$('input[type="checkbox"]').not(this).prop("checked", false); 
 		});
 	});
-
+function really(){
+	if (confirm("정말 삭제하시겠습니까??") == true){    //확인
+	    remove();
+	}else{   //취소
+	    return;
+	}
+}
 function modify(){
-var checkNo = $("input:checkbox:checked").val(); //왜 마지막 값만 나올까?
-alert(checkNo);
-alert($('input:checkbox[id="check"]').length);
+var checkNo = $("input:checkbox:checked").val(); 
 window.location = checkNo;
+}
+function remove(){
+var checkNo = $("input:checkbox:checked").val(); 
+window.location = "delete?no=" + checkNo;
 }
 </script>
 </body>
