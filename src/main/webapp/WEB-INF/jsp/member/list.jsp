@@ -53,6 +53,7 @@ padding: 50px;
 <body topmargin="0" leftmargin="0">
 <div class='container'>
 <jsp:include page="../header.jsp"/>
+<p id="status"></p>
 <div id= "wrapper"> 
 <div class="left"> <jsp:include page="../left.jsp"></jsp:include>
 </div>
@@ -99,7 +100,7 @@ padding: 50px;
                     <tr>
                         <th width="35" height="20" align="center"></th>
                         <th style="text-align: center"  width="85" align="center">이름</th>
-                        <th style="text-align: center" width="153" align="center">주민번호</th>
+                        <th style="text-align: center" width="153" align="center">주민등록번호</th>
                         <th style="text-align: center" width="91" align="center">성별</th>
                         <th style="text-align: center" width="91" align="center">기술등급</th>
                         <th style="text-align: center" width="91" align="center">상태</th>
@@ -120,8 +121,27 @@ padding: 50px;
                       <td colspan="7" background="${contextPath}/image/line_bg.gif"></td>
                     </tr>
                     </c:forEach> 
-                      <td height="35" colspan="7" align="center" style="padding-bottom:3"><a href="list?pn=1"><img src="${contextPath}/image/prev.gif" width="22" height="15" border="0" align="absmiddle"></a>&nbsp;<a href="list?pn=${pageNo - 1}"><img src="${contextPath}/image/pre.gif" width="42" height="15" border="0" align="absmiddle"></a>&nbsp; 
-                        <a href="list?pn=1">1</a> | <a href="list?pn=2">2</a> | <a href="list?pn=3">3</a> | <a href="list?pn=4">4</a> | <a href="list?pn=5">5</a> | <a href="list?pn=6">6</a> | <a href="list?pn=7">7</a> | <a href="list?pn=8">8</a> | <a href="list?pn=9">9</a> | <a href="list?pn=10">10</a> &nbsp;<a href="list?pn=${pageNo + 1}"><img src="${contextPath}/image/next.gif" width="42" height="15" border="0" align="absmiddle"></a>&nbsp;<a href="list?pn=${lastPageNo}"><img src="${contextPath}/image/next_.gif" width="22" height="15" border="0" align="absmiddle"></a></td>
+                      <td height="35" colspan="7" align="center" style="padding-bottom:3">
+                        <c:set var="prevPageDisabled" value="${(pageNo > 1) ? '':'disabled'}"/>
+                        <c:set var="prevPageTabIndex" value="${(pageNo > 1) ? 0 : -1}"/>
+                        <c:set var="nextPageDisabled" value="${(pageNo < lastPageNo) ? '':'disabled'}"/>
+                        <c:set var="nextPageTabIndex" value="${(pageNo < lastPageNo) ? 0 : -1}"/>
+                      <a href="list?pn=1"><img src="${contextPath}/image/prev.gif" width="22" height="15" border="0" align="absmiddle"></a>&nbsp;
+						<nav aria-label="Page navigation">
+						  <ul class="pagination justify-content-center">
+						    <li class="page-item ${prevPageDisabled}"><a class="page-link" 
+						        href="list?pn=${pageNo - 1}"
+						        tabindex="${prevPageTabIndex}"><img src="${contextPath}/image/pre.gif" width="42" height="15" border="0" align="absmiddle"></a></li>
+						        
+						    <li class="page-item"><a class="page-link" href="#">${pageNo}</a></li>
+						    
+						    <li class="page-item ${nextPageDisabled}"><a class="page-link" 
+						        href="list?pn=${pageNo + 1}"
+						        tabindex="${nextPageTabIndex}"><img src="${contextPath}/image/next.gif" width="42" height="15" border="0" align="absmiddle"></a></li>
+						  </ul>
+						</nav>
+                      <a href="list?pn=${lastPageNo}"><img src="${contextPath}/image/next_.gif" width="22" height="15" border="0" align="absmiddle"></a>
+                        </td>
                     </tr>
                   </table>
                 <!-------------------------  리스트 ------------------------------>

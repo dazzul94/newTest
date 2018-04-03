@@ -58,6 +58,7 @@ padding: 50px;
 <body topmargin="0" leftmargin="0">
 <div class='container'>
 <jsp:include page="../header.jsp"/>
+<p id="status"></p>
 <form action="update" method='post' enctype="multipart/form-data">
 <div id= "wrapper"> 
 <div class="left"> 

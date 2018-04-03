@@ -29,7 +29,7 @@
     <c:when test="${sessionScope.loginUser != null}">
         관리자  &nbsp;
         <a href="${contextPath}/app/auth/logout" 
-           class='btn btn-outline-danger btn-sm'>로그아웃</a>
+           class='btn btn-outline-danger btn-sm' style="cursor:hand;"">로그아웃</a>
     </c:when>
 
     <c:otherwise>

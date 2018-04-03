@@ -58,6 +58,7 @@ padding: 50px;
 <body topmargin="0" leftmargin="0">
 <div class='container'>
 <jsp:include page="../header.jsp"/>
+<p id="status"></p>
 <form action="add" method='post' enctype="multipart/form-data">
 <div id= "wrapper"> 
 <div class="left"> 
@@ -368,7 +369,6 @@ upload.onchange = function (e) {
 </script>
 <jsp:include page="../jslib.jsp"/>
 </div>
-<p id="status">&nbsp;</p>
 </body>
 </html>
 
