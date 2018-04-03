@@ -84,7 +84,7 @@ padding: 50px;
               <tr align="center" bgcolor="F8F8F8"> 
                 <td height="26" align="right" bgcolor="F8F8F8" style="padding-right:10"><img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
                   <a href="javascript:modify()">수정</a> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
-                  <span style="cursor:pointer" onclick="really()">삭제</span> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
+                  <span style="cursor:pointer" onMouseover="this.style.color='red';" onMouseout="this.style.color='black';"  onclick="really()">삭제</span> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
                   <a href="#">인사기록카드</a> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
                   <a href="#">경력정보</a> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
                   <a href="#">근무정보</a> </td>
@@ -133,7 +133,7 @@ padding: 50px;
               <tr align="center" bgcolor="F8F8F8"> 
                 <td height="26" align="right" bgcolor="F8F8F8" style="padding-right:10"><img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
                   <a href="javascript:modify()">수정</a> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
-                  <span style="cursor:pointer" onclick="really()">삭제</span><img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
+                  <span style="cursor:pointer" onMouseover="this.style.color='red';" onMouseout="this.style.color='black';" onclick="really()">삭제</span><img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
                   <a href="#">인사기록카드</a> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
                   <a href="#">경력정보</a> <img src="${contextPath}/image/all_icon.gif" width="11" height="11" align="absmiddle"> 
                   <a href="#">근무정보</a> </td>
@@ -158,12 +158,23 @@ function really(){
 	}
 }
 function modify(){
-	
+	if($("input:checkbox:checked").length != 1) {
+	    //0개라면 , 여러개라면 if 문으로 
+	    if ($("input:checkbox:checked").length > 1) {
+        alert("수정할 대상을 하나만 체크해주세요")
+	    } else {
+	    alert("수정할 대상을 체크해주세요")
+	    }
+        return;
+    }	
 var checkNo = $("input:checkbox:checked").val(); 
 window.location = checkNo;
 }
 function remove(){
-	alert("체크된 개수 : "  + $("input:checkbox:checked").length)
+	if($("input:checkbox:checked").length < 1) {
+	    alert("삭제할 대상을 하나 이상 체크해주세요")
+	    return;
+	}
 /* var checkNo = $("input:checkbox:checked").val(); 
 window.location = "delete?no=" + checkNo; */
 	var send_array = Array();

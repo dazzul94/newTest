@@ -12,6 +12,6 @@ public interface MemberService {
     int getTotalCount();
     Member get(int no);
     int update(Member member);
-    int delete(int no);
+//    int delete(int no);
     int deleteAll(HashMap<String, Object> numbers);
 }

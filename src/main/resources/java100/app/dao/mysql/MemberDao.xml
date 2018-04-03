@@ -139,10 +139,10 @@
 	   where memberno=#{memberNo}
 	</update>
 
-	<delete id="delete" parameterType="int">
+	<!-- <delete id="delete" parameterType="int">
 		delete from member
 		where memberno=#{value}
-	</delete>
+	</delete> -->
 	
 	<delete id="deleteAll" parameterType="map">
 	<if test="numbers != null">

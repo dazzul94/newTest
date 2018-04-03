@@ -118,12 +118,12 @@ public class MemberController {
         return "redirect:list";
     }
 
-    @RequestMapping("delete")
+   /* @RequestMapping("delete")
     public String delete(int no) throws Exception {
 
         memberService.delete(no);
         return "redirect:list";
-    }
+    }*/
     @RequestMapping("deleteAll")
     public String deleteAll(String no) throws Exception {
         
