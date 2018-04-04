@@ -70,11 +70,12 @@ padding: 50px;
     <td><table width="640" border="0" cellspacing="0" cellpadding="0">
         <tr> 
         <form class="form-inline" action="list">
-          <td height="30" align="right"><select name="select" class="INPUT">
+          <td height="30" align="right">페이지넘버: ${pageNo}, 검색조건: ${select}, 검색어:${words}, last:${lastPageNo }<select name="select" class="INPUT">
               <option selected value="kName">이름</option>
               <option value="gender">성별</option>
               <option value="stat">기술등급</option>
-            </select> <input name="words" type="text" class="INPUT"> <button type="submit" style="background-color: white; border:0px"><img src="${contextPath}/image/search.gif" width="49" height="18" border="0" align="absmiddle" style="cursor:pointer"></button></td>
+            </select> <input name="words" type="text" class="INPUT"> <button type="submit" style="background-color: white; border:0px"><img src="${contextPath}/image/search.gif" width="49" height="18" border="0" align="absmiddle" style="cursor:pointer"></button>
+            </td>
        </form>
         </tr>
         <tr> 
@@ -126,19 +127,19 @@ padding: 50px;
                         <c:set var="prevPageTabIndex" value="${(pageNo > 1) ? 0 : -1}"/>
                         <c:set var="nextPageDisabled" value="${(pageNo < lastPageNo) ? '':'disabled'}"/>
                         <c:set var="nextPageTabIndex" value="${(pageNo < lastPageNo) ? 0 : -1}"/>
-                      <a href="list?pn=1"><img src="${contextPath}/image/prev.gif" width="22" height="15" border="0" align="absmiddle"></a>&nbsp;
+                      <a href="list?pn=1&select=${select}&words=${words}"><img src="${contextPath}/image/prev.gif" width="22" height="15" border="0" align="absmiddle"></a>&nbsp;
 						  <ul class="pagination justify-content-center">
 						    <li class="page-item ${prevPageDisabled}"><a class="page-link" 
-						        href="list?pn=${pageNo - 1}"
+						        href="list?pn=${pageNo - 1}&select=${select}&words=${words}"
 						        tabindex="${prevPageTabIndex}"><img src="${contextPath}/image/pre.gif" width="42" height="15" border="0" align="absmiddle"></a></li>
 						        
 						    <li class="page-item"><a class="page-link" href="#">${pageNo}</a></li>
 						    
 						    <li class="page-item ${nextPageDisabled}"><a class="page-link" 
-						        href="list?pn=${pageNo + 1}"
+						        href="list?pn=${pageNo + 1}&select=${select}&words=${words}"
 						        tabindex="${nextPageTabIndex}"><img src="${contextPath}/image/next.gif" width="42" height="15" border="0" align="absmiddle"></a></li>
 						  </ul>
-                      <a href="list?pn=${lastPageNo}"><img src="${contextPath}/image/next_.gif" width="22" height="15" border="0" align="absmiddle"></a>
+                      <a href="list?pn=${lastPageNo}&select=${select}&words=${words}"><img src="${contextPath}/image/next_.gif" width="22" height="15" border="0" align="absmiddle"></a>
                         </td>
                     </tr>
                   </table>

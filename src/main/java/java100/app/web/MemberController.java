@@ -71,14 +71,15 @@ public class MemberController {
         HashMap<String, Object> options = new HashMap<>();
         if (select != null) {
             options.put("select", select);
+            model.addAttribute("select", select);
         }
         if (words != null && words[0].length() > 0) {
             options.put("words", words);
+            model.addAttribute("words", words[0]);
         }
         options.put("orderColumn", orderColumn);
         options.put("align", align);
-
-        int totalCount = memberService.getTotalCount();
+        int totalCount = memberService.getTotalCount(options);
         int lastPageNo = totalCount / pageSize;
         if ((totalCount % pageSize) > 0) {
             lastPageNo++;
@@ -87,7 +88,6 @@ public class MemberController {
         // view 컴포넌트가 사용할 값을 Model에 담는다.
         model.addAttribute("pageNo", pageNo);
         model.addAttribute("lastPageNo", lastPageNo);
-
         model.addAttribute("list", memberService.list(pageNo, pageSize, options));
         return "member/list";
     }

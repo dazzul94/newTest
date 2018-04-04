@@ -10,7 +10,7 @@ public interface MemberDao {
 //참고 src77
     int insert(Member member);
     List<Member> findAll(Map<String,Object> params);
-    int countAll();
+    int countAll(HashMap<String, Object> options);
     Member findByNo(int no);
     int update(Member member);
 //    int delete(int no);

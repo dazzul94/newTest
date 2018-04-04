@@ -34,8 +34,8 @@ public class MemberServiceImpl implements MemberService {
         return memberDao.findAll(params);
     }
     @Override
-    public int getTotalCount() {
-        return memberDao.countAll();
+    public int getTotalCount(HashMap<String, Object> options) {
+        return memberDao.countAll(options);
     }
     @Override
     public Member get(int no) {

@@ -9,7 +9,7 @@ import java100.app.domain.Member;
 public interface MemberService {
     int add(Member member);
     List<Member> list(int pageNo, int pageSize, Map<String,Object> options);
-    int getTotalCount();
+    int getTotalCount(HashMap<String, Object> options);
     Member get(int no);
     int update(Member member);
 //    int delete(int no);

@@ -119,8 +119,58 @@
 		<!-- 페이지징 처리 -->
 		limit #{startIndex}, #{size}
 	</select>
-	<select id="countAll" resultType="int">
+	<select id="countAll" resultType="int" parameterType="map">
 		select count(*) from member
+		<if test="select != null">
+        <choose>
+        <!-- <when test="select == 'all'">
+        <if test="words != null">
+            <where>
+                <foreach collection="words" item="word">
+                    or kname like '%${word}%'
+                    or mynumber1 like '%${word}%'
+                </foreach>
+            </where>
+        </if>
+        </when> -->
+        <when test="select == 'kName'">
+        <if test="words != null">
+            <where>
+                <foreach collection="words" item="word">
+                    or kname like '%${word}%'
+                </foreach>
+            </where>
+        </if>
+        </when>
+        <when test="select == 'gender'">
+        <if test="words != null">
+            <where>
+                <foreach collection="words" item="word">
+                    or gender like '%${word}%'
+                </foreach>
+            </where>
+        </if>
+        </when>
+        <when test="select == 'stat'">
+        <if test="words != null">
+            <where>
+                <foreach collection="words" item="word">
+                    or stat like '%${word}%'
+                </foreach>
+            </where>
+        </if>
+        </when>
+        <when test="select == 'career'">
+        <if test="words != null">
+            <where>
+                <foreach collection="words" item="word">
+                    or career like '%${word}%'
+                </foreach>
+            </where>
+        </if>
+        </when>
+        </choose>
+        </if>
 	</select>
 	<select id="findByNo" resultMap="memberMap" parameterType="int">
 		select *
