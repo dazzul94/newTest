@@ -70,7 +70,7 @@ padding: 50px;
     <td><table width="640" border="0" cellspacing="0" cellpadding="0">
         <tr> 
         <form class="form-inline" action="list">
-          <td height="30" align="right">페이지넘버: ${pageNo}, 검색조건: ${select}, 검색어:${words}, last:${lastPageNo }<select name="select" class="INPUT">
+          <td height="30" align="right"><select name="select" class="INPUT">
               <option selected value="kName">이름</option>
               <option value="gender">성별</option>
               <option value="stat">기술등급</option>
