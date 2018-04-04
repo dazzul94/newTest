@@ -2,7 +2,6 @@ package java100.app.web;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URLDecoder;
 import java.util.HashMap;
 
 import javax.servlet.ServletContext;
@@ -102,7 +101,7 @@ public class MemberController {
     }
 
     @RequestMapping("update")
-    public String update(Member member, MultipartFile file, BindingResult bindingResult) throws Exception {
+    public String update(HttpServletRequest request, Member member, MultipartFile file, BindingResult bindingResult) throws Exception {
         if (bindingResult.hasErrors()) {
             System.out.println("파라미터 값을 변환하는 중에 오류 발생!");
         }
@@ -118,7 +117,7 @@ public class MemberController {
             member.setPhoto(filename);
         }
         memberService.update(member);
-        return "redirect:list";
+        return "redirect:" +  (String)request.getHeader("Referer");
     }
 
    /* @RequestMapping("delete")

@@ -319,7 +319,7 @@ padding: 50px;
         <tr>
           <td height="3" align="center"><table width="107" border="0" cellpadding="1" cellspacing="1">
             <tr>
-              <td width="49"><button type="submit" style="background-color: white; border:0px"><img src="${contextPath}/image/bt_remove.gif" width="49" height="18" style="cursor:pointer"></button></td>
+              <td width="49"><button type="submit" style="background-color: white; border:0px" onclick="okay()"><img src="${contextPath}/image/bt_remove.gif" width="49" height="18" style="cursor:pointer"></button></td>
               <td width="51"><a href='list'><img src="${contextPath}/image/bt_cancel.gif" width="49" height="18"></a></td>
             </tr>
           </table>            </td>
@@ -422,7 +422,9 @@ reader.readAsDataURL(file);
 
 return false;
 }; 
-
+function okay() {
+	window.alert("수정되었습니다");
+}
 </script>
 </html>
 
