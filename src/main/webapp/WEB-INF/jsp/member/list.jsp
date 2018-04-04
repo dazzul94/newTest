@@ -127,19 +127,19 @@ padding: 50px;
                         <c:set var="prevPageTabIndex" value="${(pageNo > 1) ? 0 : -1}"/>
                         <c:set var="nextPageDisabled" value="${(pageNo < lastPageNo) ? '':'disabled'}"/>
                         <c:set var="nextPageTabIndex" value="${(pageNo < lastPageNo) ? 0 : -1}"/>
-                      <a href="list?pn=1&select=${select}&words=${words}"><img src="${contextPath}/image/prev.gif" width="22" height="15" border="0" align="absmiddle"></a>&nbsp;
 						  <ul class="pagination justify-content-center">
-						    <li class="page-item ${prevPageDisabled}"><a class="page-link" 
+                      <li class="page-item"><a href="list?pn=1&select=${select}&words=${words}"><img src="${contextPath}/image/prev.gif" width="22" height="15" border="0" align="absmiddle"></a>&nbsp;</li>
+						    <li class="page-item ${prevPageDisabled}"><a id="prevBtn"
 						        href="list?pn=${pageNo - 1}&select=${select}&words=${words}"
-						        tabindex="${prevPageTabIndex}"><img src="${contextPath}/image/pre.gif" width="42" height="15" border="0" align="absmiddle"></a></li>
+						        tabindex="${prevPageTabIndex}"><img src="${contextPath}/image/pre.gif" width="42" height="15" border="0" align="absmiddle"></a>&nbsp;</li>
 						        
-						    <li class="page-item"><a class="page-link" href="#">${pageNo}</a></li>
+						    <li><a href="#">${pageNo}</a>&nbsp;</li>
 						    
-						    <li class="page-item ${nextPageDisabled}"><a class="page-link" 
+						    <li class="page-item ${nextPageDisabled}"><a id="nextBtn"
 						        href="list?pn=${pageNo + 1}&select=${select}&words=${words}"
-						        tabindex="${nextPageTabIndex}"><img src="${contextPath}/image/next.gif" width="42" height="15" border="0" align="absmiddle"></a></li>
+						        tabindex="${nextPageTabIndex}"><img src="${contextPath}/image/next.gif" width="42" height="15" border="0" align="absmiddle"></a>&nbsp;</li>
+                      <li class="page-item"><a href="list?pn=${lastPageNo}&select=${select}&words=${words}"><img src="${contextPath}/image/next_.gif" width="22" height="15" border="0" align="absmiddle"></a>&nbsp;</li>
 						  </ul>
-                      <a href="list?pn=${lastPageNo}&select=${select}&words=${words}"><img src="${contextPath}/image/next_.gif" width="22" height="15" border="0" align="absmiddle"></a>
                         </td>
                     </tr>
                   </table>
@@ -168,6 +168,18 @@ padding: 50px;
   <jsp:include page="../jslib.jsp"/>
 </div>
 <script type="text/javascript">
+var prevPageDisabled = '<c:out value="${prevPageDisabled}"/>';
+var nextPageDisabled = '<c:out value="${nextPageDisabled}"/>';
+if (prevPageDisabled == "disabled") {
+$('#prevBtn').bind('click', false);
+} else {
+	$('#prevBtn').unbind('click', false);
+}
+if (nextPageDisabled == "disabled") {
+$('#nextBtn').bind('click', false);
+} else {
+	$('#nextBtn').unbind('click', false);
+}
 function really(){
 	if (confirm("정말 삭제하시겠습니까??") == true){    //확인
 	    remove();
