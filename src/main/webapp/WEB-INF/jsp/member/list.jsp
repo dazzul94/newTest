@@ -168,7 +168,8 @@ padding: 50px;
   <jsp:include page="../jslib.jsp"/>
 </div>
 <script type="text/javascript">
-
+var request = require('request');
+request.getHeader("REFERER"); 
 function really(){
 	if (confirm("정말 삭제하시겠습니까??") == true){    //확인
 	    remove();
@@ -208,7 +209,6 @@ window.location = "delete?no=" + checkNo; */
 	}
 	window.location = "deleteAll?no=" + send_array;
 	/* $("#array").val(send_array); */
-	
 }
 
 

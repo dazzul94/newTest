@@ -2,9 +2,11 @@ package java100.app.web;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URLDecoder;
 import java.util.HashMap;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -126,7 +128,7 @@ public class MemberController {
         return "redirect:list";
     }*/
     @RequestMapping("deleteAll")
-    public String deleteAll(String no) throws Exception {
+    public String deleteAll(HttpServletRequest request, String no) throws Exception {
         
         String[] splitNo = no.split(",");
         int[] realNo = new int[splitNo.length];;
@@ -139,7 +141,10 @@ public class MemberController {
             numbers.put("numbers", realNo);
         }
         memberService.deleteAll(numbers);
-        return "redirect:list";
+       /* System.out.println((String)request.getHeader("Referer"));
+        String decodeResult = URLDecoder.decode((String)request.getHeader("Referer"), "UTF-8");
+        System.out.println(decodeResult);*/
+        return "redirect:" +  (String)request.getHeader("Referer");
     }
 
     long prevMillis = 0;
