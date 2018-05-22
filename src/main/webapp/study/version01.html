@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+	<style type="text/css">
+	#selected {
+		color: red;
+	}
+	.dark {
+		background-color: black;
+		color : white;	
+	}
+	.dark #selected {
+		color: yellow;
+	}
+	</style>
+</head>
+
+<body>
+	<h1>html : 정보</h1>
+	<h1>css : 디자인</h1> 
+	<h1>javascript : 제어</h1>  
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li id="selected">JavaScript</li>
+    </ul>
+
+	<input type="button" value="dark" onclick="change()"/>
+	<script type="text/javascript">
+		function change() {
+		document.body.className='dark';		
+		}
+	</script>
+	
+	<input type="button" value="dark2" onclick="document.body.className='dark'"/>
+</body>
+</html>
